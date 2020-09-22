@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>前端创建vue项目并使用git进行代码管理</title>
+      <link href="2020/09/22/%E5%89%8D%E7%AB%AF%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BD%BF%E7%94%A8git%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/"/>
+      <url>2020/09/22/%E5%89%8D%E7%AB%AF%E5%88%9B%E5%BB%BAvue%E9%A1%B9%E7%9B%AE%E5%B9%B6%E4%BD%BF%E7%94%A8git%E8%BF%9B%E8%A1%8C%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="前端创建vue项目并使用git进行代码管理"><a href="#前端创建vue项目并使用git进行代码管理" class="headerlink" title="前端创建vue项目并使用git进行代码管理"></a>前端创建vue项目并使用git进行代码管理</h1><h2 id="预先下载软件"><a href="#预先下载软件" class="headerlink" title="预先下载软件"></a>预先下载软件</h2><p> <a href="https://code.visualstudio.com/">Visual Studio Code</a></p><p><a href="https://nodejs.org/en/">NodeJs</a></p><p><a href="https://git-scm.com/">Git</a></p><h2 id="配置操作"><a href="#配置操作" class="headerlink" title="配置操作"></a>配置操作</h2><h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><p>国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多</p><p>打开vscode，打开terminal 输入下面的命令：</p><p>npm config set registry <a href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p><h3 id="使用npm下载安装的软件"><a href="#使用npm下载安装的软件" class="headerlink" title="使用npm下载安装的软件"></a>使用npm下载安装的软件</h3><p>前端所需要的组件大多都可以通过npm进行下载</p><p>以实习的项目为例子，我用到了vue ，vue-cli-service ，vue-router， vuex，element-ui， echarts，file-saver，axios，lodash-es</p><p>安装vue：<strong>npm install vue</strong></p><p>安装vue-clil-service：<strong>npm install -g @vue/cli</strong></p><p>安装vue-router：<strong>npm install vue-router</strong></p><p>安装vuex：<strong>npm install vuex –save</strong></p><p>安装element-ui：<strong>npm i element-ui -S</strong></p><p>安装echart：<strong>npm install echarts –save</strong></p><p>安装file-saver：<strong>npm install file-saver –save</strong></p><p>安装axios：<strong>npm install –save axios vue-axios</strong></p><p>安装lodash-es：<strong>npm i -g npm</strong>    /     <strong>npm i –save lodash</strong></p><h3 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h3><p>在桌面 or 自己项目想存放的地方右键打开git bash，输入命令：</p><p><strong>git config –global user.name “username”</strong></p><p><strong>git config –global user.email “email”</strong></p><p>上面两个命令的目的：这是以后提交代码的时候显示的用户名以及邮箱</p><p>输入下面的命令查看电脑中是否存在SSH key：</p><p><strong>cd ~/.ssh</strong></p><p>如果没有SSH key ，那么输入下面的命令生成一个SSH Key：</p><p><strong>ssh-keygen -t rsa -C “自己的github登录邮箱”</strong></p><p>输入下面的命令找到SSH密钥：</p><p><strong>cat id_rsa.pub</strong></p><p>或者根据目录去找到id_rsa.pub文件，打开后复制下来里面的SSH密钥</p><p>回到github，进入setting页面，找到SSH密钥，然后新建一个SSH，设置一个title，然后下面就把复制的SSH密钥粘贴进去即可</p><h3 id="创建项目并设置git管理"><a href="#创建项目并设置git管理" class="headerlink" title="创建项目并设置git管理"></a>创建项目并设置git管理</h3><h4 id="先创建项目文件，再创建仓库"><a href="#先创建项目文件，再创建仓库" class="headerlink" title="先创建项目文件，再创建仓库"></a>先创建项目文件，再创建仓库</h4><p>在你的电脑中找到一个你想存放项目的目录，右键打开git bash，然后输入命令：</p><p><strong>vue create filename</strong>              (这个filename是自己文件的名字，按照需求填写)</p><p>接下来会进入到一个项目的需求配置选项页面，选择最下面的 <strong>Manually select features</strong> 按照自己的需求进行配置</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue git 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="2020/09/21/hello-world/"/>
       <url>2020/09/21/hello-world/</url>
