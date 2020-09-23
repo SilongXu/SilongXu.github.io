@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="创建VUE项目并且git管理代码, LongSign">
+    <meta name="keywords" content="LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>创建VUE项目并且git管理代码 | LongSign</title>
+    <title>LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">创建VUE项目并且git管理代码</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -430,16 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/vue/">
-                                <span class="chip bg-color">vue</span>
-                            </a>
-                        
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/%E6%95%A3%E8%AE%B0/">
+                                <span class="chip bg-color">散记</span>
                             </a>
                         
                     </div>
@@ -450,8 +442,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                基础配置
+                            <a href="/categories/%E6%95%A3%E8%AE%B0/" class="post-category">
+                                散记
                             </a>
                         
                     </div>
@@ -479,55 +471,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h1 id="前端创建vue项目并使用git进行代码管理"><a href="#前端创建vue项目并使用git进行代码管理" class="headerlink" title="前端创建vue项目并使用git进行代码管理"></a>前端创建vue项目并使用git进行代码管理</h1><h2 id="预先下载软件"><a href="#预先下载软件" class="headerlink" title="预先下载软件"></a>预先下载软件</h2><p> <a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a></p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.org/en/">NodeJs</a></p>
-<p><a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a></p>
-<h2 id="配置操作"><a href="#配置操作" class="headerlink" title="配置操作"></a>配置操作</h2><h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><p>国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多</p>
-<p>打开vscode，打开terminal 输入下面的命令：</p>
-<p>npm config set registry <a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/">https://registry.npm.taobao.org</a></p>
-<h3 id="使用npm下载安装的软件"><a href="#使用npm下载安装的软件" class="headerlink" title="使用npm下载安装的软件"></a>使用npm下载安装的软件</h3><p>前端所需要的组件大多都可以通过npm进行下载</p>
-<p>以实习的项目为例子，我用到了vue ，vue-cli-service ，vue-router， vuex，element-ui， echarts，file-saver，axios，lodash-es</p>
-<p>安装vue：<strong>npm install vue</strong></p>
-<p>安装vue-clil-service：<strong>npm install -g @vue/cli</strong></p>
-<p>安装vue-router：<strong>npm install vue-router</strong></p>
-<p>安装vuex：<strong>npm install vuex –save</strong></p>
-<p>安装element-ui：<strong>npm i element-ui -S</strong></p>
-<p>安装echart：<strong>npm install echarts –save</strong></p>
-<p>安装file-saver：<strong>npm install file-saver –save</strong></p>
-<p>安装axios：<strong>npm install –save axios vue-axios</strong></p>
-<p>安装lodash-es：<strong>npm i -g npm</strong>    /     <strong>npm i –save lodash</strong></p>
-<h3 id="配置SSH密钥"><a href="#配置SSH密钥" class="headerlink" title="配置SSH密钥"></a>配置SSH密钥</h3><p>在桌面 or 自己项目想存放的地方右键打开git bash，输入命令：</p>
-<p><strong>git config –global user.name “username”</strong></p>
-<p><strong>git config –global user.email “email”</strong></p>
-<p>上面两个命令的目的：这是以后提交代码的时候显示的用户名以及邮箱</p>
-<p>输入下面的命令查看电脑中是否存在SSH key：</p>
-<p><strong>cd ~/.ssh</strong></p>
-<p>如果没有SSH key ，那么输入下面的命令生成一个SSH Key：</p>
-<p><strong>ssh-keygen -t rsa -C “自己的github登录邮箱”</strong></p>
-<p>输入下面的命令找到SSH密钥：</p>
-<p><strong>cat id_rsa.pub</strong></p>
-<p>或者根据目录去找到id_rsa.pub文件，打开后复制下来里面的SSH密钥</p>
-<p>回到github，进入setting页面，找到SSH密钥，然后新建一个SSH，设置一个title，然后下面就把复制的SSH密钥粘贴进去即可</p>
-<h3 id="创建项目并设置git管理"><a href="#创建项目并设置git管理" class="headerlink" title="创建项目并设置git管理"></a>创建项目并设置git管理</h3><h4 id="先创建项目文件，再创建仓库"><a href="#先创建项目文件，再创建仓库" class="headerlink" title="先创建项目文件，再创建仓库"></a>先创建项目文件，再创建仓库</h4><p>在你的电脑中找到一个你想存放项目的目录，右键打开git bash，然后输入命令：</p>
-<p><strong>vue create filename</strong>              (这个filename是自己文件的名字，按照需求填写)</p>
-<p>接下来会进入到一个项目的需求配置选项页面，选择最下面的 <strong>Manually select features</strong> 按照自己的需求进行配置</p>
-<p>配置好了之后等待安装完毕</p>
-<p>然后输入下面的命令：</p>
-<p><strong>git init</strong>     (项目初始化)</p>
-<p><strong>git add .</strong>  （文件暂存）</p>
-<p><strong>git commit -m “”</strong>   （文件提交）</p>
-<p>然后进入github 创建一个仓库，并把仓库的SSH克隆地址复制下来</p>
-<p>回到命令窗口输入命令：</p>
-<p><strong>git remote add origin ssh地址</strong></p>
-<p><strong>git push -u origin master –force</strong></p>
-<h4 id="先创建仓库，再创建项目文件"><a href="#先创建仓库，再创建项目文件" class="headerlink" title="先创建仓库，再创建项目文件"></a>先创建仓库，再创建项目文件</h4><p>先在github上创建一个仓库，然后复制ssh地址</p>
-<p>找到想存放自己项目的一个文件目录，右键点击git bash：</p>
-<p><strong>git clone ssh地址</strong>     </p>
-<p>(如果需要密码，就是之前自己配置SSH密钥的时候设置的密码)</p>
-<p>然后在这个文件目录  进行命令</p>
-<p><strong>vue create filename</strong></p>
-<p>创建自己的项目</p>
+                <h3 id="9月23散记"><a href="#9月23散记" class="headerlink" title="9月23散记"></a>9月23散记</h3><p>就像鹏博说的一样，今天是个暴雨天，就算是带了伞，穿了高底篮球鞋，最后到公司还是湿漉漉了</p>
+<p>刚来北京的时候就想过如果遇到了雨天我上下班会不会很不方便，现实告诉了我： 是的 不仅不方便 还特别的难受，因为脚很黏:cry:</p>
+<p>but上班路上有看到令强迫症难受的井盖:grinning:<br><img src="/posts/0/%E5%BC%BA%E8%BF%AB%E7%97%87%E4%BA%95%E7%9B%96.jpg" alt="强迫症井盖"></p>
+<p>下班看到有猫耳朵的车子:cat:<br><img src="/posts/0/cat_Car.jpg" alt="cat_Car"></p>
+<p>听着耳机的歌，缓慢的骑着车，每天下班的这个时候就是最舒服的时候吧，一个人的世界还真的挺好</p>
+<p>谈什么恋爱 别人喜欢的是历史好的男生 你们不是一路人</p>
 
             </div>
             <hr/>
@@ -553,7 +502,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.silongBlog.cn/posts/vueCreateGit.html">https://www.silongBlog.cn/posts/vueCreateGit.html</a>
+                    <a href="https://www.silongBlog.cn/posts/0.html">https://www.silongBlog.cn/posts/0.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -591,16 +540,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/vue/">
-                                    <span class="chip bg-color">vue</span>
-                                </a>
-                            
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/%E6%95%A3%E8%AE%B0/">
+                                    <span class="chip bg-color">散记</span>
                                 </a>
                             
                         </div>
@@ -768,9 +709,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/posts/0.html">
                     <div class="card-image">
@@ -790,9 +732,9 @@ but上班路
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -805,6 +747,7 @@ but上班路
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -823,7 +766,7 @@ but上班路
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/gitManage.html">
+                <a href="/posts/vueCreateGit.html">
                     <div class="card-image">
                         
                         
@@ -835,20 +778,12 @@ but上班路
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            项目协作时git管理代码的命令提交上传代码的命令
-
-
-git add -A
-代码存入缓存区
-
-
-
-git commit -m “注释”
-提交代码到本地仓库
-
-
-git commit –amend
-提交代码，且本次提交的代码和上次提交的代码进
+                            
+前端创建vue项目并使用git进行代码管理预先下载软件 Visual Studio Code
+NodeJs
+Git
+配置操作使用淘宝镜像国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
+打开vscode，打开termi
                         
                     </div>
                     <div class="publish-info">
@@ -870,8 +805,16 @@ git commit –amend
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
                     <a href="/tags/git/">
                         <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
