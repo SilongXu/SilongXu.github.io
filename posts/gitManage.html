@@ -471,59 +471,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="项目协作时git管理代码的命令"><a href="#项目协作时git管理代码的命令" class="headerlink" title="项目协作时git管理代码的命令"></a>项目协作时git管理代码的命令</h1><h3 id="提交上传代码的命令"><a href="#提交上传代码的命令" class="headerlink" title="提交上传代码的命令"></a>提交上传代码的命令</h3><table>
+                <h1>项目协作时git管理代码的命令</h1>
+<h3 id="提交上传代码的命令">提交上传代码的命令</h3>
+<table>
 <thead>
 <tr>
 <th><strong>git add -A</strong></th>
-<th align="left"><strong>代码存入缓存区</strong></th>
+<th style="text-align:left"><strong>代码存入缓存区</strong></th>
 </tr>
 </thead>
-<tbody><tr>
-<td><strong>git commit -m “注释”</strong></td>
-<td align="left"><strong>提交代码到本地仓库</strong></td>
+<tbody>
+<tr>
+<td><strong>git commit -m "注释"</strong></td>
+<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
 </tr>
 <tr>
-<td><strong>git commit –amend</strong></td>
-<td align="left"><strong>提交代码，且本次提交的代码和上次提交的代码进行合并</strong></td>
+<td><strong>git commit --amend</strong></td>
+<td style="text-align:left"><strong>提交代码，且本次提交的代码和上次提交的代码进行合并</strong></td>
 </tr>
 <tr>
 <td><strong>git rebase -i HEAD~x</strong></td>
-<td align="left"><strong>这里的x填数字，意思是显示前x次数的提交。通常用来进行commit合并或者删除</strong></td>
+<td style="text-align:left"><strong>这里的x填数字，意思是显示前x次数的提交。通常用来进行commit合并或者删除</strong></td>
 </tr>
 <tr>
 <td><strong>git push origin 分支名</strong></td>
-<td align="left"><strong>将代码从本地仓库提交到远端仓库</strong></td>
+<td style="text-align:left"><strong>将代码从本地仓库提交到远端仓库</strong></td>
 </tr>
-</tbody></table>
-<h3 id="拉取代码的命令"><a href="#拉取代码的命令" class="headerlink" title="拉取代码的命令"></a>拉取代码的命令</h3><table>
+</tbody>
+</table>
+<h3 id="拉取代码的命令">拉取代码的命令</h3>
+<table>
 <thead>
 <tr>
-<th align="left">git add -A</th>
-<th align="left">代码存入暂存区</th>
+<th style="text-align:left">git add -A</th>
+<th style="text-align:left">代码存入暂存区</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left"><strong>git commit -m “”</strong></td>
-<td align="left"><strong>提交代码到本地仓库</strong></td>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>git commit -m ""</strong></td>
+<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
 </tr>
 <tr>
-<td align="left"><strong>git fetch origin</strong></td>
-<td align="left"><strong>从远端拿到代码</strong></td>
+<td style="text-align:left"><strong>git fetch origin</strong></td>
+<td style="text-align:left"><strong>从远端拿到代码</strong></td>
 </tr>
 <tr>
-<td align="left"><strong>git rebase origin/master</strong></td>
-<td align="left"><strong>远端代码和本地代码进行比较</strong></td>
+<td style="text-align:left"><strong>git rebase origin/master</strong></td>
+<td style="text-align:left"><strong>远端代码和本地代码进行比较</strong></td>
 </tr>
 <tr>
-<td align="left"><strong>git add -A</strong></td>
-<td align="left"><strong>比较完毕之后进行提交</strong></td>
+<td style="text-align:left"><strong>git add -A</strong></td>
+<td style="text-align:left"><strong>比较完毕之后进行提交</strong></td>
 </tr>
 <tr>
-<td align="left"><strong>git rebase –continue</strong></td>
-<td align="left"><strong>看比较是否成功（没有遗漏）</strong></td>
+<td style="text-align:left"><strong>git rebase --continue</strong></td>
+<td style="text-align:left"><strong>看比较是否成功（没有遗漏）</strong></td>
 </tr>
-</tbody></table>
-<h3 id="分支开发"><a href="#分支开发" class="headerlink" title="分支开发"></a>分支开发</h3><p>协作开发的时候不要在master上进行开发，要在分支开发，完成后再进行master合并</p>
+</tbody>
+</table>
+<h3 id="分支开发">分支开发</h3>
+<p>协作开发的时候不要在master上进行开发，要在分支开发，完成后再进行master合并</p>
 <table>
 <thead>
 <tr>
@@ -531,7 +539,8 @@
 <th>切换到master分支</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>git rebase origin</strong></td>
 <td><strong>查看远端的master的代码</strong></td>
 </tr>
@@ -547,16 +556,19 @@
 <td>git branch</td>
 <td><strong>查看所有分支，并显示当前所在分支</strong></td>
 </tr>
-</tbody></table>
-<h3 id="分支落后时如何处理"><a href="#分支落后时如何处理" class="headerlink" title="分支落后时如何处理"></a>分支落后时如何处理</h3><table>
+</tbody>
+</table>
+<h3 id="分支落后时如何处理">分支落后时如何处理</h3>
+<table>
 <thead>
 <tr>
 <th>git checkout master</th>
 <th>切换到master分支</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><strong>git pull –rebase</strong></td>
+<tbody>
+<tr>
+<td><strong>git pull --rebase</strong></td>
 <td><strong>拉取master的代码并且进行rebase</strong></td>
 </tr>
 <tr>
@@ -564,15 +576,34 @@
 <td><strong>冲突处理完毕后，保存到暂存区</strong></td>
 </tr>
 <tr>
-<td><strong>git commit –amend</strong></td>
+<td><strong>git commit --amend</strong></td>
 <td><strong>提交冲突处理完的代码</strong></td>
 </tr>
 <tr>
-<td><strong>git push origin featureName –force</strong></td>
+<td><strong>git push origin featureName --force</strong></td>
 <td><strong>然后强推到分支中</strong></td>
 </tr>
-</tbody></table>
-
+</tbody>
+</table>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -821,11 +852,15 @@
                     <div class="summary block-with-text">
                         
                             
-前端创建vue项目并使用git进行代码管理预先下载软件 Visual Studio Code
+前端创建vue项目并使用git进行代码管理
+预先下载软件
+Visual Studio Code
 NodeJs
 Git
-配置操作使用淘宝镜像国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
-打开vscode，打开termi
+配置操作
+使用淘宝镜像
+国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
+打开vscode，打开te
                         
                     </div>
                     <div class="publish-info">
@@ -870,7 +905,7 @@ Git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/undefined.html">
+                <a href="/posts/4a17b156.html">
                     <div class="card-image">
                         
                         
