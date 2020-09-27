@@ -4,11 +4,214 @@
   
     
     <entry>
-      <title>9月24散记</title>
-      <link href="posts/0.html"/>
-      <url>posts/0.html</url>
+      <title>9月25散记</title>
+      <link href="posts/9-25day.html"/>
+      <url>posts/9-25day.html</url>
       
-        <content type="html"><![CDATA[<h3 id="9-24散记">9.24散记</h3><p>早餐店有一个顾客抱怨没有位置坐了：想赚钱还不收拾桌子</p><p>这也许就是他发泄的方式  那阿龙怎么发泄呢</p><p><a href="https://music.163.com/#/song?id=518904648">Paris in the rain</a>  超好听！宝藏歌曲get  炒鸡浪漫~！</p><p><a href="https://music.163.com/#/song?id=1329228822">我和比奇堡的朋友们</a>   是个可可爱爱的沙雕歌曲 真是让人心情愉快~美好的一天就这么开始了！</p><p>en plus 网易云的评论区里也都是有趣的人！</p><p>害外卖延迟30分钟again  现在的外卖配送真是越来越欧式了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><p>wocwoc这周结束就没有前端leader了  现在的文件上传还没有搞清楚，可真是伤脑筋</p><p>！晚上跟公司的同事一起吃了饭 第一次团建get！</p><p>没想到互联网公司在饭桌上聊得会是 学历+游戏+学校生活 感觉同事都好厉害 都是985名校 留学也是全球IS前几 俺立马变土狗了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h3 id="9月25散记">9月25散记</h3><p>白衣服真的好容易就脏了</p><p>每次穿白衣服 饮料都会撒到衣服上 洗也不知道咋洗 <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f629.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f629.png?v8">😩</span></p><p>我才发现原来我现在身上只有400RMB了 得撑5天 加油阿龙 活下去！</p><p>像我这么可爱的人还不是得拉屎<br>像我这么凶的系鞋带还不是要系蝴蝶结</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>文件下载</title>
+      <link href="posts/fileSaverDownload.html"/>
+      <url>posts/fileSaverDownload.html</url>
+      
+        <content type="html"><![CDATA[<h1>File-Saver实现文件下载</h1><h2 id="安装下载">安装下载</h2><p>npm命令安装file-saver：</p><p><strong>npm install file-saver -s</strong></p><p>然后再需要的文件中引入使用</p><p><strong>import  FileSaver from 'file-saver’</strong></p><h2 id="File-Saver的使用">File-Saver的使用</h2><p>接口配置：</p><pre><code>getDetailDownload(id){    return http.post(`/retrieval/system/data/download`, id,    {responseType: 'blob'});  },</code></pre><p>根据配置好的接口，使用blob类型下载：</p><pre><code>detailDownload(detail) {      apiService.getDetailDownload(detail.id)      .then((href) =&gt; {        const blob = new Blob([href], {type: 'application/octet-stream'});        //const fileName = href.header['content-disposition'].split(";")[1].split("filename=")[1];        //const fileNameFinal = fileName.substring(0, fileName.length - 1);        const fileName = 'downloadFile';        saveAs(blob, fileName);      }).catch(() =&gt; {      });    },</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> file-saver </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大文件上传方案</title>
+      <link href="posts/vueSimpleUploader.html"/>
+      <url>posts/vueSimpleUploader.html</url>
+      
+        <content type="html"><![CDATA[<h1>vue-simple-uploader实现大文件上传</h1><h2 id="关于vue-simple-uploader">关于vue-simple-uploader</h2><p><code>vue-simple-uploader</code>是基于 <code>simple-uploader.js</code> 封装的vue上传插件。它的优点包括且不限于以下几种：</p><ul><li>支持文件、多文件、文件夹上传；支持拖拽文件、文件夹上传</li><li>可暂停、继续上传</li><li>错误处理</li><li>支持“秒传”，通过文件判断服务端是否已存在从而实现“秒传”</li><li>分块上传</li><li>支持进度、预估剩余时间、出错自动重试、重传等操作</li></ul><p>需要熟悉simple-uploader.js 以及 vue-simple-uploader文档：</p><p><a href="https://github.com/simple-uploader/vue-uploader/blob/master/README_zh-CN.md">vue-simple-uploader文档</a></p><p><a href="https://github.com/simple-uploader/Uploader/blob/develop/README_zh-CN.md">simple-uploader.js文档</a></p><h2 id="安装-配置vue-simple-uploader">安装+配置vue-simple-uploader</h2><p>npm安装命令：</p><p><strong>npm install vue-simple-uploader --save</strong></p><p>然后在main.js中引用：</p><p><strong>import uploader from 'vue-simple-uploader’</strong></p><p><strong>Vue.use(uploader)</strong></p><p>安装md5工具：</p><p><strong>npm install spark-md5 --save</strong></p><p>引用md5工具：</p><p><strong>import SparkMD5 from "spark-md5"</strong></p><h2 id="使用vue-simple-uploader">使用vue-simple-uploader</h2><p>需要的封装：</p><p>封装一个globaluploader的vue组件</p><p>在app.vue中配置使用globaluploader</p><p>配置Bus(全局上传插件)</p><p>配置上传类型(accept_config)</p><p>参考 <a href="https://github.com/shady-xia/Blog/tree/master/vue-simple-uploader">封装globaluploader</a></p><p>(需要配合后端的接口 得到上传的url以及必要的切片配置)</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 上传 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>resiezeObserver-lodash搭配</title>
+      <link href="posts/resizeLodash.html"/>
+      <url>posts/resizeLodash.html</url>
+      
+        <content type="html"><![CDATA[<h1>vue中使用resizeObserver-polyfill并搭配防抖节流</h1><h2 id="resizeObserver-polyfill">resizeObserver-polyfill</h2><h3 id="resizeObserver-polyfill的作用">resizeObserver-polyfill的作用</h3><p>resizeObserver-polyfill 的github地址：<a href="https://github.com/que-etc/resize-observer-polyfill">resizeObserver-polyfill</a></p><p>npm安装：当我们需要知道一个元素的大小变化或者屏幕横竖屏时，我们需要监听window.resize事件或者window.orientationchange方法。由于reize事件会在一秒内触发将近60次，所以很容易在改变窗口大小时导致性能问题。换句话说，window.resize事件通常是浪费的，因为它会监听每个元素的大小变化（只有window对象才有resize事件），而不是具体到某个元素的变化。如果我们只想监听某个元素的变化的话，这种操作就很浪费性能了。</p><p>而ResizeObserver API就可以帮助我们：监听一个DOM节点的变化，这种变化包括但不仅限于：</p><ol><li>某个节点的出现和隐藏</li><li>某个节点的大小变化</li></ol><p>ResizeObserver API是一个新的JavaScript API，与IntersectionObserver API非常相似，它们都允许我们去监听某个元素的变化。</p><h3 id="resizeObserver-polyfill的使用">resizeObserver-polyfill的使用</h3><h4 id="安装">安装</h4><pre><code>npm install resize-observer-polyfill --save-dev</code></pre><h4 id="使用">使用</h4><p>基本使用方法：</p><pre class=" language-language-javascript"><code class="language-language-javascript">import ResizeObserver from 'resize-observer-polyfill';const ro = new ResizeObserver((entries, observer) => {    for (const entry of entries) {        const {left, top, width, height} = entry.contentRect;        console.log('Element:', entry.target);        console.log(`Element's size: ${ width }px x ${ height }px`);        console.log(`Element's paddings: ${ top }px ; ${ left }px`);        //在此处做你要做的事情，例如我得到了header的自身的高度，然后设置Drawer的margin-top为这个高度，那么，无论header如果变化，我的drawer都会紧紧吸附于header了    }});ro.observe(document.body); //这里是你观察的对象，官方例子观察body，我观察的是header的容器 </code></pre><h2 id="lodash-es的函数节流和防抖">lodash-es的函数节流和防抖</h2><p>放上lodash的官网地址：<a href="https://www.lodashjs.com/docs/lodash.debounce">lodash-es</a></p><p>里面不仅仅又节流和防抖，还有很多别的JS使用组件工具</p><h3 id="函数节流">函数节流</h3><h4 id="什么是函数节流">什么是函数节流</h4><p>节流就是指限定一个函数的调用频率限制在一个阈值内，例如1s内某个函数不能被调用两次</p><h4 id="函数节流的使用方法">函数节流的使用方法</h4><p>lodash提供了这个方法</p><pre class=" language-language-javascript"><code class="language-language-javascript">_.throttle(func, [wait=0], [options={}])</code></pre><p>函数节流的具体使用例子：</p><pre class=" language-language-javascript"><code class="language-language-javascript">// 避免在滚动时过分的更新定位jQuery(window).on('scroll', _.throttle(updatePosition, 100));// 点击后就调用 `renewToken`，但5分钟内超过1次。var throttled = _.throttle(renewToken, 300000, { 'trailing': false });jQuery(element).on('click', throttled);// 取消一个 trailing 的节流调用。jQuery(window).on('popstate', throttled.cancel);</code></pre><h3 id="函数的防抖">函数的防抖</h3><h4 id="什么是函数的去抖">什么是函数的去抖</h4><p>去抖指的是当调用函数n秒后，才会执行该动作，若在这n秒内又调用该函数则将取消前一次并重新计算执行时间，举个简单的例子，我们要根据用户输入做suggest，每当用户按下键盘的时候都可以取消前一次，并且只关心最后一次输入的时间就行了。</p><p>lodash也提供了这个方法</p><pre class=" language-language-javascript"><code class="language-language-javascript">_.debounce(func, [wait=0], [options={}])</code></pre><p>防抖的简单用例：</p><pre class=" language-language-javascript"><code class="language-language-javascript">// 避免窗口在变动时出现昂贵的计算开销。jQuery(window).on('resize', _.debounce(calculateLayout, 150));// 当点击时 `sendMail` 随后就被调用。jQuery(element).on('click', _.debounce(sendMail, 300, {  'leading': true,  'trailing': false}));// 确保 `batchLog` 调用1次之后，1秒内会被触发。var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });var source = new EventSource('/stream');jQuery(source).on('message', debounced);// 取消一个 trailing 的防抖动调用jQuery(window).on('popstate', debounced.cancel);</code></pre><h2 id="resizeObserver-polyfill和lodash的搭配">resizeObserver-polyfill和lodash的搭配</h2><p>简单的举例即可：</p><pre class=" language-language-javascript"><code class="language-language-javascript">// throttle需要自行引入哈const myObserver = new ResizeObserver(throttle(entries => {  entries.forEach(entry => {    console.log('大小位置 contentRect', entry.contentRect)    console.log('监听的DOM target', entry.target)  })}), 500)</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> resizeObserver </tag>
+            
+            <tag> lodash-es </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue项目创建之后的配置</title>
+      <link href="posts/configAfterVue.html"/>
+      <url>posts/configAfterVue.html</url>
+      
+        <content type="html"><![CDATA[<h1>vue项目创建之后的配置</h1><p>在使用vue cli创建了vue项目并且进行了git代码管理之后，我们已经可以进行本地开发，进行静态页面的开发了。但是一个项目肯定不会只有静态页面（除非只是为了展示），我们还需要和后端进行数据交互，也就是接口以及字段的对接。</p><p>在进行接口的对接的时候，前端也需要配置，比如当<strong>前后端主机不同时，需要使用代理，进行接口配置</strong>。还有<strong>前端如果要得到后端的数据时，需要发送请求，这就涉及到http请求配置</strong>。本片博客在创建了本地开发的基础上进阶进行配置，使前端可以要到后端的数据。</p><h2 id="vue-config-js文件">vue.config.js文件</h2><h3 id="什么是vue-config-js文件">什么是vue.config.js文件</h3><p>vue.config.js是一个可选的配置文件，如果项目的根目录中(和package.json同级),存在这个文件，那么他会被@vue/cli-service自动加载。它用于存放一些针对@vue/cli的配置。</p><h3 id="vue-config-js文件常用配置">vue.config.js文件常用配置</h3><p>首先贴出vue-cli的官方配置文档：<a href="https://cli.vuejs.org/zh/config/#%E5%85%A8%E5%B1%80-cli-%E9%85%8D%E7%BD%AE">vue-cli</a> (其实所有的配置并没有很多)</p><p>比较常用的(电子所项目用到)配置：</p><table><thead><tr><th>devServer / devServer.proxy</th><th>配置点后端API服务器请求代理 （很重要）proxy APIWEN</th></tr></thead><tbody><tr><td><strong>chainWebpack</strong></td><td><strong>对内部的webpack配置进行更精细的修改 （重要）</strong></td></tr><tr><td><strong>transpileDependencies</strong></td><td><strong>默认情况下 <code>babel-loader</code> 会忽略所有 <code>node_modules</code> 中的文件。如果你想要通过 Babel 显式转译一个依赖，可以在这个选项中列出来。</strong></td></tr><tr><td><strong>lintOnSave</strong></td><td><strong>设置时候每次保存时通过eslint进行代码lint (这玩意很烦人，最好设置成false)</strong></td></tr></tbody></table><p>proxy API 文档地址：<a href="https://github.com/chimurai/http-proxy-middleware#proxycontext-config">proxy API</a></p><h2 id="基于axios的http请求封装配置">基于axios的http请求封装配置</h2><p>在配置完了代理之后，我们的API服务器已经和后端连接了(详细地址还需要后端告诉你)</p><p>接下来就是配置http请求了，vue中使用axios配置http的方法另起了一篇博客，请参考这个博客：vue使用axios封装http请求</p><h2 id="配置项目所需的样式">配置项目所需的样式</h2><p>也许项目的样式组件你用的是element-ui或者vant，但是它们的组件也会有和自己的UI交互图不相符的时候，这时候就需要自己另启一个文件夹用来存放自己项目的样式：</p><ul><li>在src下创建一个styles文件夹</li><li>更改global变量（html自带的基本标签）:<img src="/posts/configAfterVue.htm/.%5Cimage%5Chtml-style.png" alt="html-style"></li><li>定义所有的基本变量：<img src="/posts/configAfterVue.htm/image%5Cvariables.png" alt="variables"></li><li>更改外用组件的底层变量：<img src="/posts/configAfterVue.htm/image%5Celement-ui-change.png" alt="eleUI-change"></li><li>最后将这些所有的更改都在index.scss中进行导入，以便于外部调用：<img src="/posts/configAfterVue.htm/.%5Cimage%5Cstyle-index.png" alt="styleIndex"></li></ul><p>（根据自己的实际情况进行修改）</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> 配置 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>大文件上传方案</title>
+      <link href="posts/uploadBigFile.html"/>
+      <url>posts/uploadBigFile.html</url>
+      
+        <content type="html"><![CDATA[<h1>大文件上传实现方案</h1><h2 id="关于上传">关于上传</h2><p>其实Element-ui已经封装了一个自己上传的组件了，只是这个组件没有暂停，继续的功能。也就是说没有分片，没有断点续传的功能。</p><p>数管的项目根据UI图来看是需要实现断点续传这个功能的，于是在网络上搜索了相关资料。找到了webuploader，但是这个在14年之后就没有更新过了。然后又找到了基于vue和simple-uploader.js封装的一个上传组件：<strong>vue-simple-uploader</strong>(会另写一篇vue-simple-uploader的文章)</p><h2 id="关于切片上传-断点续传">关于切片上传 / 断点续传</h2><p>切片上传/断点续传的存在是为了实现 <strong>大文件上传</strong>。有时候因为网络的不稳定，用户关闭页面等影响，如果文件没有在下载完成的中途出现了问题，就会下载失败</p><h3 id="文件切片">文件切片</h3><p>切片，顾名思义就是把要上传的大文件，按照配置的每个切片的大小分成若干份的 “片”，上传整个大文件的过程转变成了上传若干个 “片” 的过程，如果出现网络问题导致上传失败，虽然整个文件没有成功，但是有一些切片已经成功下载，用户在下一次下载的时候可以从没有的切片开始下载，而下载过的切片就不需要重新下载了。</p><p>文件的切片由前端完成，每一切片的传输都会调用一次上传的接口，当所有切片都上传完成，再调用一次makefille接口(自己协商的接口名称)，通知后端还原切片</p><h3 id="还原切片">还原切片</h3><p>为了还原切片，前端会在每个切片上附加其context信息，</p><ol><li>当前切片index，以及切片总数，切片index从0开始</li><li>MD5 hash校验</li></ol><p>后端找到同一个context下的所有切片，确认每个切片顺序，拼接切片</p><p>不同名 但 同hash相同文件 可以直接指针指向，前端将状态标为完成(待定)</p><h3 id="断点续传">断点续传</h3><p>当网络故障或用户关闭网页等，需要断点续传。</p><p>需要后端维护文件列表及上传进度。</p><p>当接收到某个文件makefile请求后表示所有切片传输完毕。</p><p>当用户需要续传时，</p><ul><li>如果 没有关闭tab或者 没有关闭浏览器 或者网断的情况下，不需要额外操作可以正常续传文件。</li><li>如果关闭tab或浏览器，传输列表依然在，续传需要用户再次选择完全相同的文件，但是已经上传过的切片不用重复上传。</li><li>选择不同的文件前端需要校验并提示</li></ul><p>针对关闭浏览器，关闭tab和断网的情况</p><ul><li>关闭浏览器，前端无法捕捉事件，需要后端自行调研判断，百度了一下有相关帖子</li><li>关闭tab，前端可以捕捉事件，并通知后端。</li><li>网络断开，前端无法捕捉，需要后端判断 。</li></ul><p>可能还要考虑切片保存期限的问题。（待定）</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> vue-simple-uploader </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>axios封装http请求</title>
+      <link href="posts/axiosHTTP.html"/>
+      <url>posts/axiosHTTP.html</url>
+      
+        <content type="html"><![CDATA[<h1>vue使用axios封装http请求</h1><h2 id="安装axios">安装axios</h2><p>npm命令：</p><p><strong>npm install axios --save</strong></p><p>找一个合适的目录位置 建立一个http.js</p><p>在其中导入axios</p><pre class=" language-language-javascript"><code class="language-language-javascript">import axios from 'axios';</code></pre><h2 id="配置axios">配置axios</h2><p>1.创建一个axios对象，取名http，并且在内部进行axios配置:</p><pre><code>const http = axios.create({  baseURL: BASE_URL, //请求base url ，一般由前后端商量接口确定base url，将自动加在url前面,除非url是个绝对url  url: ,//用于请求的服务器url，只有这一项是必需的  method: ,//创建请求时使用的方法，默认是get  headers: {    'Content-Type': 'application/json;charset=UTF-8',//设置请求时的header信息  },  timeout: ,//设置请求超时时间  withCredentials: ,//如果需要携带cookie的时候这一项为true});</code></pre><p><strong>详细参数配置查看这个网页</strong>：<a href="https://blog.csdn.net/moxiaoya1314/article/details/73650751">axios配置</a></p><p>2.然后配置拦截器用来拦截request请求和response应答：</p><pre><code>http.interceptors.request.use((data) =&gt; {  return data;});http.interceptors.response.use((response) =&gt; {  return response.data;}, (error) =&gt; {  return Promise.reject(error);});</code></pre><p>3.接下来在需要的模块里创建一个module.service.js文件，用来配置http的get ，post，以及其他的请求，举例：</p><pre><code>import http from '../shared/services/http'const prefix = 'catalog';const MenuService = {  getMenuNodeByParentId(parentId) {    return http.get(`/${prefix}/system/directory/${parentId}`);  },  createMenuNode(catalogId, metaEnumFieldDTO, nodeCode) {    return http.put(`/${prefix}/system/directory`, { catalogId, metaEnumFieldDTO, nodeCode });  },  deleteMenuNode(ids) {    return http.post(`/${prefix}/system/directory/delete`, ids);  },  getMetaField(id) {    return http.get(`/${prefix}/system/directory/metafield/${id}`);  },  enumfield(fieldCode, id) {    return http.get(`/${prefix}/system/directory/enumfield/${id}/${fieldCode}`);  },};export default MenuService;</code></pre><p>4.最后在需要接口的地方引用即可，举例：</p><pre><code>    fetchMenuSelectData(classValue) {      if(this.node) {        apiService.enumfield(classValue, this.node.id)        .then((selects) =&gt; {          this.menuSelect = selects;          this.menuSelect.items.forEach(item =&gt; {            this.checkList.push(item.itemCode);          });        }).catch(() =&gt; {});      }    },</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> axios </tag>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>9月24散记</title>
+      <link href="posts/9-24day.html"/>
+      <url>posts/9-24day.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="9-24散记">9.24散记</h3><p>早餐店有一个顾客抱怨没有位置坐了：想赚钱还不收拾桌子</p><p>这也许就是他发泄的方式  那阿龙怎么发泄呢</p><p><a href="https://music.163.com/#/song?id=518904648">Paris in the rain</a>  超好听！宝藏歌曲get  炒鸡浪漫~！</p><p><a href="https://music.163.com/#/song?id=1329228822">我和比奇堡的朋友们</a>   是个可可爱爱的沙雕歌曲 真是让人心情愉快~美好的一天就这么开始了！</p><p>en plus 网易云的评论区里也都是有趣的人！</p><p>害外卖延迟30分钟again  现在的外卖配送真是越来越欧式了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><p>wocwoc这周结束就没有前端leader了  现在的文件上传还没有搞清楚，可真是伤脑筋</p><p>！晚上跟公司的同事一起吃了饭 第一次团建get！</p><p>没想到互联网公司在饭桌上聊得会是 学历+游戏+学校生活 感觉同事都好厉害 都是985名校 留学也是全球IS前几 俺立马变土狗了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><p>会做错很多事情，但不会做错爱你<br>会后悔很多事情，但不会后悔喜欢你</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -30,10 +233,10 @@
     
     <entry>
       <title>9月23散记</title>
-      <link href="posts/0.html"/>
-      <url>posts/0.html</url>
+      <link href="posts/9-2day.html"/>
+      <url>posts/9-2day.html</url>
       
-        <content type="html"><![CDATA[<h3 id="9月23散记">9月23散记</h3><p>就像鹏博说的一样，今天是个暴雨天，就算是带了伞，穿了高底篮球鞋，最后到公司还是湿漉漉了</p><p>刚来北京的时候就想过如果遇到了雨天我上下班会不会很不方便，现实告诉了我： 是的 不仅不方便 还特别的难受，因为脚很黏<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span></p><p>but上班路上有看到令强迫症难受的井盖<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8">😀</span><br><img src="/posts/0/%E5%BC%BA%E8%BF%AB%E7%97%87%E4%BA%95%E7%9B%96.jpg" alt="强迫症井盖"></p><p>下班看到有猫耳朵的车子<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8">🐱</span><br><img src="/posts/0/cat_Car.jpg" alt="cat_Car"></p><p>听着耳机的歌，缓慢的骑着车，每天下班的这个时候就是最舒服的时候吧，一个人的世界还真的挺好</p><p>谈什么恋爱 别人喜欢的是历史好的男生 你们不是一路人</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<h3 id="9月23散记">9月23散记</h3><p>就像鹏博说的一样，今天是个暴雨天，就算是带了伞，穿了高底篮球鞋，最后到公司还是湿漉漉了</p><p>刚来北京的时候就想过如果遇到了雨天我上下班会不会很不方便，现实告诉了我： 是的 不仅不方便 还特别的难受，因为脚很黏<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span></p><p>but上班路上有看到令强迫症难受的井盖<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8">😀</span><br><img src="/posts/abc.jpg" alt="强迫症井盖"></p><p>下班看到有猫耳朵的车子<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8">🐱</span><br><img src="/posts/cat_Car.jpg" alt="cat_Car"></p><p>听着耳机的歌，缓慢的骑着车，每天下班的这个时候就是最舒服的时候吧，一个人的世界还真的挺好</p><p>谈什么恋爱 别人喜欢的是历史好的男生 你们不是一路人</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
@@ -55,8 +258,8 @@
     
     <entry>
       <title>创建VUE项目并且git管理代码</title>
-      <link href="posts/vueCreateGit.html"/>
-      <url>posts/vueCreateGit.html</url>
+      <link href="posts/vueGitManage.html"/>
+      <url>posts/vueGitManage.html</url>
       
         <content type="html"><![CDATA[<hr><h1>前端创建vue项目并使用git进行代码管理</h1><h2 id="预先下载软件">预先下载软件</h2><p><a href="https://code.visualstudio.com/">Visual Studio Code</a></p><p><a href="https://nodejs.org/en/">NodeJs</a></p><p><a href="https://git-scm.com/">Git</a></p><h2 id="配置操作">配置操作</h2><h3 id="使用淘宝镜像">使用淘宝镜像</h3><p>国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多</p><p>打开vscode，打开terminal 输入下面的命令：</p><p>npm config set registry <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a></p><h3 id="使用npm下载安装的软件">使用npm下载安装的软件</h3><p>前端所需要的组件大多都可以通过npm进行下载</p><p>以实习的项目为例子，我用到了vue ，vue-cli-service ，vue-router， vuex，element-ui， echarts，file-saver，axios，lodash-es</p><p>安装vue：<strong>npm install vue</strong></p><p>安装vue-clil-service：<strong>npm install -g @vue/cli</strong></p><p>安装vue-router：<strong>npm install vue-router</strong></p><p>安装vuex：<strong>npm install vuex --save</strong></p><p>安装element-ui：<strong>npm i element-ui -S</strong></p><p>安装echart：<strong>npm install echarts --save</strong></p><p>安装file-saver：<strong>npm install file-saver --save</strong></p><p>安装axios：<strong>npm install --save axios vue-axios</strong></p><p>安装lodash-es：<strong>npm i -g npm</strong>    /     <strong>npm i --save lodash</strong></p><h3 id="配置SSH密钥">配置SSH密钥</h3><p>在桌面 or 自己项目想存放的地方右键打开git bash，输入命令：</p><p><strong>git config --global <a href="http://user.name">user.name</a> "username"</strong></p><p><strong>git config --global user.email "email"</strong></p><p>上面两个命令的目的：这是以后提交代码的时候显示的用户名以及邮箱</p><p>输入下面的命令查看电脑中是否存在SSH key：</p><p><strong>cd ~/.ssh</strong></p><p>如果没有SSH key ，那么输入下面的命令生成一个SSH Key：</p><p><strong>ssh-keygen -t rsa -C "自己的github登录邮箱"</strong></p><p>输入下面的命令找到SSH密钥：</p><p><strong>cat id_rsa.pub</strong></p><p>或者根据目录去找到id_rsa.pub文件，打开后复制下来里面的SSH密钥</p><p>回到github，进入setting页面，找到SSH密钥，然后新建一个SSH，设置一个title，然后下面就把复制的SSH密钥粘贴进去即可</p><h3 id="创建项目并设置git管理">创建项目并设置git管理</h3><h4 id="先创建项目文件，再创建仓库">先创建项目文件，再创建仓库</h4><p>在你的电脑中找到一个你想存放项目的目录，右键打开git bash，然后输入命令：</p><p><strong>vue create filename</strong>              (这个filename是自己文件的名字，按照需求填写)</p><p>接下来会进入到一个项目的需求配置选项页面，选择最下面的 <strong>Manually select features</strong> 按照自己的需求进行配置</p><p>配置好了之后等待安装完毕</p><p>然后输入下面的命令：</p><p><strong>git init</strong>     (项目初始化)</p><p><strong>git add .</strong>  （文件暂存）</p><p><strong>git commit -m “”</strong>   （文件提交）</p><p>然后进入github 创建一个仓库，并把仓库的SSH克隆地址复制下来</p><p>回到命令窗口输入命令：</p><p><strong>git remote add origin ssh地址</strong></p><p><strong>git push -u origin master --force</strong></p><h4 id="先创建仓库，再创建项目文件">先创建仓库，再创建项目文件</h4><p>先在github上创建一个仓库，然后复制ssh地址</p><p>找到想存放自己项目的一个文件目录，右键点击git bash：</p><p><strong>git clone ssh地址</strong></p><p>(如果需要密码，就是之前自己配置SSH密钥的时候设置的密码)</p><p>然后在这个文件目录  进行命令</p><p><strong>vue create filename</strong></p><p>创建自己的项目</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       

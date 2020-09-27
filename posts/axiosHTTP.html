@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="项目协作时git管理代码命令, LongSign">
+    <meta name="keywords" content="axios封装http请求, LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>项目协作时git管理代码命令 | LongSign</title>
+    <title>axios封装http请求 | LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">项目协作时git管理代码命令</h1>
+                    <h1 class="description center-align post-title">axios封装http请求</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/axios/">
+                                <span class="chip bg-color">axios</span>
+                            </a>
+                        
+                            <a href="/tags/http/">
+                                <span class="chip bg-color">http</span>
                             </a>
                         
                     </div>
@@ -442,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -455,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-23
+                    2020-09-27
                 </div>
                 
 
@@ -471,120 +483,75 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>项目协作时git管理代码的命令</h1>
-<h3 id="提交上传代码的命令">提交上传代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th><strong>git add -A</strong></th>
-<th style="text-align:left"><strong>代码存入缓存区</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git commit -m "注释"</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td style="text-align:left"><strong>提交代码，且本次提交的代码和上次提交的代码进行合并</strong></td>
-</tr>
-<tr>
-<td><strong>git rebase -i HEAD~x</strong></td>
-<td style="text-align:left"><strong>这里的x填数字，意思是显示前x次数的提交。通常用来进行commit合并或者删除</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin 分支名</strong></td>
-<td style="text-align:left"><strong>将代码从本地仓库提交到远端仓库</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="拉取代码的命令">拉取代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">git add -A</th>
-<th style="text-align:left">代码存入暂存区</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>git commit -m ""</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git fetch origin</strong></td>
-<td style="text-align:left"><strong>从远端拿到代码</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase origin/master</strong></td>
-<td style="text-align:left"><strong>远端代码和本地代码进行比较</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git add -A</strong></td>
-<td style="text-align:left"><strong>比较完毕之后进行提交</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase --continue</strong></td>
-<td style="text-align:left"><strong>看比较是否成功（没有遗漏）</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支开发">分支开发</h3>
-<p>协作开发的时候不要在master上进行开发，要在分支开发，完成后再进行master合并</p>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git rebase origin</strong></td>
-<td><strong>查看远端的master的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git pull</strong></td>
-<td><strong>拉取代码</strong></td>
-</tr>
-<tr>
-<td><strong>git checkout -b branchName</strong></td>
-<td><strong>创建并切换到一个新的分支</strong></td>
-</tr>
-<tr>
-<td>git branch</td>
-<td><strong>查看所有分支，并显示当前所在分支</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支落后时如何处理">分支落后时如何处理</h3>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git pull --rebase</strong></td>
-<td><strong>拉取master的代码并且进行rebase</strong></td>
-</tr>
-<tr>
-<td><strong>git add -A</strong></td>
-<td><strong>冲突处理完毕后，保存到暂存区</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td><strong>提交冲突处理完的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin featureName --force</strong></td>
-<td><strong>然后强推到分支中</strong></td>
-</tr>
-</tbody>
-</table>
+                <h1>vue使用axios封装http请求</h1>
+<h2 id="安装axios">安装axios</h2>
+<p>npm命令：</p>
+<p><strong>npm install axios --save</strong></p>
+<p>找一个合适的目录位置 建立一个http.js</p>
+<p>在其中导入axios</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">import axios from 'axios';
+</code></pre>
+<h2 id="配置axios">配置axios</h2>
+<p>1.创建一个axios对象，取名http，并且在内部进行axios配置:</p>
+<pre><code>const http = axios.create({
+  baseURL: BASE_URL, //请求base url ，一般由前后端商量接口确定base url，将自动加在url前面,除非url是个绝对url
+  url: ,//用于请求的服务器url，只有这一项是必需的
+  method: ,//创建请求时使用的方法，默认是get
+  headers: {
+    'Content-Type': 'application/json;charset=UTF-8',//设置请求时的header信息
+  },
+  timeout: ,//设置请求超时时间
+  withCredentials: ,//如果需要携带cookie的时候这一项为true
+});
+</code></pre>
+<p><strong>详细参数配置查看这个网页</strong>：<a target="_blank" rel="noopener" href="https://blog.csdn.net/moxiaoya1314/article/details/73650751">axios配置</a></p>
+<p>2.然后配置拦截器用来拦截request请求和response应答：</p>
+<pre><code>http.interceptors.request.use((data) =&gt; {
+  return data;
+});
+
+http.interceptors.response.use((response) =&gt; {
+  return response.data;
+}, (error) =&gt; {
+  return Promise.reject(error);
+});
+</code></pre>
+<p>3.接下来在需要的模块里创建一个module.service.js文件，用来配置http的get ，post，以及其他的请求，举例：</p>
+<pre><code>import http from '../shared/services/http'
+
+const prefix = 'catalog';
+const MenuService = {
+  getMenuNodeByParentId(parentId) {
+    return http.get(`/${prefix}/system/directory/${parentId}`);
+  },
+  createMenuNode(catalogId, metaEnumFieldDTO, nodeCode) {
+    return http.put(`/${prefix}/system/directory`, { catalogId, metaEnumFieldDTO, nodeCode });
+  },
+  deleteMenuNode(ids) {
+    return http.post(`/${prefix}/system/directory/delete`, ids);
+  },
+  getMetaField(id) {
+    return http.get(`/${prefix}/system/directory/metafield/${id}`);
+  },
+  enumfield(fieldCode, id) {
+    return http.get(`/${prefix}/system/directory/enumfield/${id}/${fieldCode}`);
+  },
+};
+export default MenuService;
+</code></pre>
+<p>4.最后在需要接口的地方引用即可，举例：</p>
+<pre><code>    fetchMenuSelectData(classValue) {
+      if(this.node) {
+        apiService.enumfield(classValue, this.node.id)
+        .then((selects) =&gt; {
+          this.menuSelect = selects;
+          this.menuSelect.items.forEach(item =&gt; {
+            this.checkList.push(item.itemCode);
+          });
+        }).catch(() =&gt; {});
+      }
+    },
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -628,7 +595,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.silongBlog.cn/posts/gitManage.html">https://www.silongBlog.cn/posts/gitManage.html</a>
+                    <a href="https://www.silongBlog.cn/posts/axiosHTTP.html">https://www.silongBlog.cn/posts/axiosHTTP.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -666,8 +633,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/axios/">
+                                    <span class="chip bg-color">axios</span>
+                                </a>
+                            
+                                <a href="/tags/http/">
+                                    <span class="chip bg-color">http</span>
                                 </a>
                             
                         </div>
@@ -839,40 +818,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/vueGitManage.html">
+                <a href="/posts/uploadBigFile.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="创建VUE项目并且git管理代码">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="大文件上传方案">
                         
-                        <span class="card-title">创建VUE项目并且git管理代码</span>
+                        <span class="card-title">大文件上传方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前端创建vue项目并使用git进行代码管理
-预先下载软件
-Visual Studio Code
-NodeJs
-Git
-配置操作
-使用淘宝镜像
-国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
-打开vscode，打开te
+                            大文件上传实现方案
+关于上传
+其实Element-ui已经封装了一个自己上传的组件了，只是这个组件没有暂停，继续的功能。也就是说没有分片，没有断点续传的功能。
+数管的项目根据UI图来看是需要实现断点续传这个功能的，于是在网络上搜索了相关资料
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -886,12 +859,12 @@ Git
                         <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/vue-simple-uploader/">
+                        <span class="chip bg-color">vue-simple-uploader</span>
                     </a>
                     
                 </div>
@@ -905,32 +878,48 @@ Git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4a17b156.html">
+                <a href="/posts/9-24day.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="9月24散记">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">9月24散记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            9.24散记
+早餐店有一个顾客抱怨没有位置坐了：想赚钱还不收拾桌子
+这也许就是他发泄的方式  那阿龙怎么发泄呢
+Paris in the rain  超好听！宝藏歌曲get  炒鸡浪漫~！
+我和比奇堡的朋友们   是个可可爱爱的沙雕歌曲 真
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-24
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Silong Xu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%A3%E8%AE%B0/" class="post-category">
+                                    散记
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%A3%E8%AE%B0/">
+                        <span class="chip bg-color">散记</span>
+                    </a>
+                    
                 </div>
                 
             </div>

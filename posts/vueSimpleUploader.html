@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="项目协作时git管理代码命令, LongSign">
+    <meta name="keywords" content="大文件上传方案, LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>项目协作时git管理代码命令 | LongSign</title>
+    <title>大文件上传方案 | LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">项目协作时git管理代码命令</h1>
+                    <h1 class="description center-align post-title">大文件上传方案</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/%E4%B8%8A%E4%BC%A0/">
+                                <span class="chip bg-color">上传</span>
                             </a>
                         
                     </div>
@@ -442,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -455,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-23
+                    2020-09-27
                 </div>
                 
 
@@ -471,120 +479,38 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>项目协作时git管理代码的命令</h1>
-<h3 id="提交上传代码的命令">提交上传代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th><strong>git add -A</strong></th>
-<th style="text-align:left"><strong>代码存入缓存区</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git commit -m "注释"</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td style="text-align:left"><strong>提交代码，且本次提交的代码和上次提交的代码进行合并</strong></td>
-</tr>
-<tr>
-<td><strong>git rebase -i HEAD~x</strong></td>
-<td style="text-align:left"><strong>这里的x填数字，意思是显示前x次数的提交。通常用来进行commit合并或者删除</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin 分支名</strong></td>
-<td style="text-align:left"><strong>将代码从本地仓库提交到远端仓库</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="拉取代码的命令">拉取代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">git add -A</th>
-<th style="text-align:left">代码存入暂存区</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>git commit -m ""</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git fetch origin</strong></td>
-<td style="text-align:left"><strong>从远端拿到代码</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase origin/master</strong></td>
-<td style="text-align:left"><strong>远端代码和本地代码进行比较</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git add -A</strong></td>
-<td style="text-align:left"><strong>比较完毕之后进行提交</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase --continue</strong></td>
-<td style="text-align:left"><strong>看比较是否成功（没有遗漏）</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支开发">分支开发</h3>
-<p>协作开发的时候不要在master上进行开发，要在分支开发，完成后再进行master合并</p>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git rebase origin</strong></td>
-<td><strong>查看远端的master的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git pull</strong></td>
-<td><strong>拉取代码</strong></td>
-</tr>
-<tr>
-<td><strong>git checkout -b branchName</strong></td>
-<td><strong>创建并切换到一个新的分支</strong></td>
-</tr>
-<tr>
-<td>git branch</td>
-<td><strong>查看所有分支，并显示当前所在分支</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支落后时如何处理">分支落后时如何处理</h3>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git pull --rebase</strong></td>
-<td><strong>拉取master的代码并且进行rebase</strong></td>
-</tr>
-<tr>
-<td><strong>git add -A</strong></td>
-<td><strong>冲突处理完毕后，保存到暂存区</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td><strong>提交冲突处理完的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin featureName --force</strong></td>
-<td><strong>然后强推到分支中</strong></td>
-</tr>
-</tbody>
-</table>
+                <h1>vue-simple-uploader实现大文件上传</h1>
+<h2 id="关于vue-simple-uploader">关于vue-simple-uploader</h2>
+<p><code>vue-simple-uploader</code>是基于 <code>simple-uploader.js</code> 封装的vue上传插件。它的优点包括且不限于以下几种：</p>
+<ul>
+<li>支持文件、多文件、文件夹上传；支持拖拽文件、文件夹上传</li>
+<li>可暂停、继续上传</li>
+<li>错误处理</li>
+<li>支持“秒传”，通过文件判断服务端是否已存在从而实现“秒传”</li>
+<li>分块上传</li>
+<li>支持进度、预估剩余时间、出错自动重试、重传等操作</li>
+</ul>
+<p>需要熟悉simple-uploader.js 以及 vue-simple-uploader文档：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/simple-uploader/vue-uploader/blob/master/README_zh-CN.md">vue-simple-uploader文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/simple-uploader/Uploader/blob/develop/README_zh-CN.md">simple-uploader.js文档</a></p>
+<h2 id="安装-配置vue-simple-uploader">安装+配置vue-simple-uploader</h2>
+<p>npm安装命令：</p>
+<p><strong>npm install vue-simple-uploader --save</strong></p>
+<p>然后在main.js中引用：</p>
+<p><strong>import uploader from 'vue-simple-uploader’</strong></p>
+<p><strong>Vue.use(uploader)</strong></p>
+<p>安装md5工具：</p>
+<p><strong>npm install spark-md5 --save</strong></p>
+<p>引用md5工具：</p>
+<p><strong>import SparkMD5 from "spark-md5"</strong></p>
+<h2 id="使用vue-simple-uploader">使用vue-simple-uploader</h2>
+<p>需要的封装：</p>
+<p>封装一个globaluploader的vue组件</p>
+<p>在app.vue中配置使用globaluploader</p>
+<p>配置Bus(全局上传插件)</p>
+<p>配置上传类型(accept_config)</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://github.com/shady-xia/Blog/tree/master/vue-simple-uploader">封装globaluploader</a></p>
+<p>(需要配合后端的接口 得到上传的url以及必要的切片配置)</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -628,7 +554,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.silongBlog.cn/posts/gitManage.html">https://www.silongBlog.cn/posts/gitManage.html</a>
+                    <a href="https://www.silongBlog.cn/posts/vueSimpleUploader.html">https://www.silongBlog.cn/posts/vueSimpleUploader.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -666,8 +592,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/%E4%B8%8A%E4%BC%A0/">
+                                    <span class="chip bg-color">上传</span>
                                 </a>
                             
                         </div>
@@ -839,40 +773,37 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/vueGitManage.html">
+                <a href="/posts/fileSaverDownload.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="创建VUE项目并且git管理代码">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="文件下载">
                         
-                        <span class="card-title">创建VUE项目并且git管理代码</span>
+                        <span class="card-title">文件下载</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前端创建vue项目并使用git进行代码管理
-预先下载软件
-Visual Studio Code
-NodeJs
-Git
-配置操作
-使用淘宝镜像
-国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
-打开vscode，打开te
+                            File-Saver实现文件下载
+安装下载
+npm命令安装file-saver：
+npm install file-saver -s
+然后再需要的文件中引入使用
+import  FileSaver from 'file-saver’
+Fil
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -886,12 +817,12 @@ Git
                         <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/file-saver/">
+                        <span class="chip bg-color">file-saver</span>
                     </a>
                     
                 </div>
@@ -905,32 +836,59 @@ Git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4a17b156.html">
+                <a href="/posts/resizeLodash.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="resiezeObserver-lodash搭配">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">resiezeObserver-lodash搭配</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            vue中使用resizeObserver-polyfill并搭配防抖节流
+resizeObserver-polyfill
+resizeObserver-polyfill的作用
+resizeObserver-polyfill 的github地
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Silong Xu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/resizeObserver/">
+                        <span class="chip bg-color">resizeObserver</span>
+                    </a>
+                    
+                    <a href="/tags/lodash-es/">
+                        <span class="chip bg-color">lodash-es</span>
+                    </a>
+                    
                 </div>
                 
             </div>

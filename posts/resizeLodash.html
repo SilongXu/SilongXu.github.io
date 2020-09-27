@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="项目协作时git管理代码命令, LongSign">
+    <meta name="keywords" content="resiezeObserver-lodash搭配, LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>项目协作时git管理代码命令 | LongSign</title>
+    <title>resiezeObserver-lodash搭配 | LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">项目协作时git管理代码命令</h1>
+                    <h1 class="description center-align post-title">resiezeObserver-lodash搭配</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/resizeObserver/">
+                                <span class="chip bg-color">resizeObserver</span>
+                            </a>
+                        
+                            <a href="/tags/lodash-es/">
+                                <span class="chip bg-color">lodash-es</span>
                             </a>
                         
                     </div>
@@ -442,8 +454,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -455,7 +467,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-23
+                    2020-09-27
                 </div>
                 
 
@@ -471,120 +483,94 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>项目协作时git管理代码的命令</h1>
-<h3 id="提交上传代码的命令">提交上传代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th><strong>git add -A</strong></th>
-<th style="text-align:left"><strong>代码存入缓存区</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git commit -m "注释"</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td style="text-align:left"><strong>提交代码，且本次提交的代码和上次提交的代码进行合并</strong></td>
-</tr>
-<tr>
-<td><strong>git rebase -i HEAD~x</strong></td>
-<td style="text-align:left"><strong>这里的x填数字，意思是显示前x次数的提交。通常用来进行commit合并或者删除</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin 分支名</strong></td>
-<td style="text-align:left"><strong>将代码从本地仓库提交到远端仓库</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="拉取代码的命令">拉取代码的命令</h3>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">git add -A</th>
-<th style="text-align:left">代码存入暂存区</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>git commit -m ""</strong></td>
-<td style="text-align:left"><strong>提交代码到本地仓库</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git fetch origin</strong></td>
-<td style="text-align:left"><strong>从远端拿到代码</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase origin/master</strong></td>
-<td style="text-align:left"><strong>远端代码和本地代码进行比较</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git add -A</strong></td>
-<td style="text-align:left"><strong>比较完毕之后进行提交</strong></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>git rebase --continue</strong></td>
-<td style="text-align:left"><strong>看比较是否成功（没有遗漏）</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支开发">分支开发</h3>
-<p>协作开发的时候不要在master上进行开发，要在分支开发，完成后再进行master合并</p>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git rebase origin</strong></td>
-<td><strong>查看远端的master的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git pull</strong></td>
-<td><strong>拉取代码</strong></td>
-</tr>
-<tr>
-<td><strong>git checkout -b branchName</strong></td>
-<td><strong>创建并切换到一个新的分支</strong></td>
-</tr>
-<tr>
-<td>git branch</td>
-<td><strong>查看所有分支，并显示当前所在分支</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="分支落后时如何处理">分支落后时如何处理</h3>
-<table>
-<thead>
-<tr>
-<th>git checkout master</th>
-<th>切换到master分支</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>git pull --rebase</strong></td>
-<td><strong>拉取master的代码并且进行rebase</strong></td>
-</tr>
-<tr>
-<td><strong>git add -A</strong></td>
-<td><strong>冲突处理完毕后，保存到暂存区</strong></td>
-</tr>
-<tr>
-<td><strong>git commit --amend</strong></td>
-<td><strong>提交冲突处理完的代码</strong></td>
-</tr>
-<tr>
-<td><strong>git push origin featureName --force</strong></td>
-<td><strong>然后强推到分支中</strong></td>
-</tr>
-</tbody>
-</table>
+                <h1>vue中使用resizeObserver-polyfill并搭配防抖节流</h1>
+<h2 id="resizeObserver-polyfill">resizeObserver-polyfill</h2>
+<h3 id="resizeObserver-polyfill的作用">resizeObserver-polyfill的作用</h3>
+<p>resizeObserver-polyfill 的github地址：<a target="_blank" rel="noopener" href="https://github.com/que-etc/resize-observer-polyfill">resizeObserver-polyfill</a></p>
+<p>npm安装：当我们需要知道一个元素的大小变化或者屏幕横竖屏时，我们需要监听window.resize事件或者window.orientationchange方法。由于reize事件会在一秒内触发将近60次，所以很容易在改变窗口大小时导致性能问题。换句话说，window.resize事件通常是浪费的，因为它会监听每个元素的大小变化（只有window对象才有resize事件），而不是具体到某个元素的变化。如果我们只想监听某个元素的变化的话，这种操作就很浪费性能了。</p>
+<p>而ResizeObserver API就可以帮助我们：监听一个DOM节点的变化，这种变化包括但不仅限于：</p>
+<ol>
+<li>某个节点的出现和隐藏</li>
+<li>某个节点的大小变化</li>
+</ol>
+<p>ResizeObserver API是一个新的JavaScript API，与IntersectionObserver API非常相似，它们都允许我们去监听某个元素的变化。</p>
+<h3 id="resizeObserver-polyfill的使用">resizeObserver-polyfill的使用</h3>
+<h4 id="安装">安装</h4>
+<pre><code>npm install resize-observer-polyfill --save-dev
+</code></pre>
+<h4 id="使用">使用</h4>
+<p>基本使用方法：</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">import ResizeObserver from 'resize-observer-polyfill';
+
+const ro = new ResizeObserver((entries, observer) => {
+    for (const entry of entries) {
+        const {left, top, width, height} = entry.contentRect;
+
+        console.log('Element:', entry.target);
+        console.log(`Element's size: ${ width }px x ${ height }px`);
+        console.log(`Element's paddings: ${ top }px ; ${ left }px`);
+        //在此处做你要做的事情，例如我得到了header的自身的高度，然后设置Drawer的margin-top为这个高度，那么，无论header如果变化，我的drawer都会紧紧吸附于header了
+
+    }
+});
+
+ro.observe(document.body); //这里是你观察的对象，官方例子观察body，我观察的是header的容器 
+</code></pre>
+<h2 id="lodash-es的函数节流和防抖">lodash-es的函数节流和防抖</h2>
+<p>放上lodash的官网地址：<a target="_blank" rel="noopener" href="https://www.lodashjs.com/docs/lodash.debounce">lodash-es</a></p>
+<p>里面不仅仅又节流和防抖，还有很多别的JS使用组件工具</p>
+<h3 id="函数节流">函数节流</h3>
+<h4 id="什么是函数节流">什么是函数节流</h4>
+<p>节流就是指限定一个函数的调用频率限制在一个阈值内，例如1s内某个函数不能被调用两次</p>
+<h4 id="函数节流的使用方法">函数节流的使用方法</h4>
+<p>lodash提供了这个方法</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">_.throttle(func, [wait=0], [options={}])
+</code></pre>
+<p>函数节流的具体使用例子：</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">// 避免在滚动时过分的更新定位
+jQuery(window).on('scroll', _.throttle(updatePosition, 100));
+
+// 点击后就调用 `renewToken`，但5分钟内超过1次。
+var throttled = _.throttle(renewToken, 300000, { 'trailing': false });
+jQuery(element).on('click', throttled);
+
+// 取消一个 trailing 的节流调用。
+jQuery(window).on('popstate', throttled.cancel);
+</code></pre>
+<h3 id="函数的防抖">函数的防抖</h3>
+<h4 id="什么是函数的去抖">什么是函数的去抖</h4>
+<p>去抖指的是当调用函数n秒后，才会执行该动作，若在这n秒内又调用该函数则将取消前一次并重新计算执行时间，举个简单的例子，我们要根据用户输入做suggest，每当用户按下键盘的时候都可以取消前一次，并且只关心最后一次输入的时间就行了。</p>
+<p>lodash也提供了这个方法</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">_.debounce(func, [wait=0], [options={}])
+</code></pre>
+<p>防抖的简单用例：</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">// 避免窗口在变动时出现昂贵的计算开销。
+jQuery(window).on('resize', _.debounce(calculateLayout, 150));
+
+// 当点击时 `sendMail` 随后就被调用。
+jQuery(element).on('click', _.debounce(sendMail, 300, {
+  'leading': true,
+  'trailing': false
+}));
+
+// 确保 `batchLog` 调用1次之后，1秒内会被触发。
+var debounced = _.debounce(batchLog, 250, { 'maxWait': 1000 });
+var source = new EventSource('/stream');
+jQuery(source).on('message', debounced);
+
+// 取消一个 trailing 的防抖动调用
+jQuery(window).on('popstate', debounced.cancel);
+</code></pre>
+<h2 id="resizeObserver-polyfill和lodash的搭配">resizeObserver-polyfill和lodash的搭配</h2>
+<p>简单的举例即可：</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">// throttle需要自行引入哈
+const myObserver = new ResizeObserver(throttle(entries => {
+  entries.forEach(entry => {
+    console.log('大小位置 contentRect', entry.contentRect)
+    console.log('监听的DOM target', entry.target)
+  })
+}), 500)
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -628,7 +614,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://www.silongBlog.cn/posts/gitManage.html">https://www.silongBlog.cn/posts/gitManage.html</a>
+                    <a href="https://www.silongBlog.cn/posts/resizeLodash.html">https://www.silongBlog.cn/posts/resizeLodash.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -666,8 +652,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/resizeObserver/">
+                                    <span class="chip bg-color">resizeObserver</span>
+                                </a>
+                            
+                                <a href="/tags/lodash-es/">
+                                    <span class="chip bg-color">lodash-es</span>
                                 </a>
                             
                         </div>
@@ -839,40 +837,35 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/vueGitManage.html">
+                <a href="/posts/vueSimpleUploader.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="创建VUE项目并且git管理代码">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="大文件上传方案">
                         
-                        <span class="card-title">创建VUE项目并且git管理代码</span>
+                        <span class="card-title">大文件上传方案</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-前端创建vue项目并使用git进行代码管理
-预先下载软件
-Visual Studio Code
-NodeJs
-Git
-配置操作
-使用淘宝镜像
-国内使用npm可能对下载安装速率有影响，所以设置一个淘宝镜像会快很多
-打开vscode，打开te
+                            vue-simple-uploader实现大文件上传
+关于vue-simple-uploader
+vue-simple-uploader是基于 simple-uploader.js 封装的vue上传插件。它的优点包括且不限于以下几种：
+
+支
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-23
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    基础配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -886,12 +879,12 @@ Git
                         <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/git/">
-                        <span class="chip bg-color">git</span>
-                    </a>
-                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%8A%E4%BC%A0/">
+                        <span class="chip bg-color">上传</span>
                     </a>
                     
                 </div>
@@ -905,32 +898,53 @@ Git
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4a17b156.html">
+                <a href="/posts/configAfterVue.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="vue项目创建之后的配置">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">vue项目创建之后的配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            vue项目创建之后的配置
+在使用vue cli创建了vue项目并且进行了git代码管理之后，我们已经可以进行本地开发，进行静态页面的开发了。但是一个项目肯定不会只有静态页面（除非只是为了展示），我们还需要和后端进行数据交互，也就是接口以及字
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Silong Xu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
+                                    配置
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                        <span class="chip bg-color">配置</span>
+                    </a>
+                    
                 </div>
                 
             </div>
