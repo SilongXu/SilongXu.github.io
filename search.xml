@@ -4,6 +4,83 @@
   
     
     <entry>
+      <title>9月30散记</title>
+      <link href="posts/9-30day.html"/>
+      <url>posts/9-30day.html</url>
+      
+        <content type="html"><![CDATA[<h1>9月30散记</h1><p>武汉大学三行情书大赛：</p><p>​螃蟹在拨我的壳，笔记本在写我。漫天的我落在枫叶上的雪花上。而你在想我。</p><p>深入解读：</p><p>​第一层：螃蟹不可能在剥我的壳。笔记本不可能在写我。我不可能落在枫叶上的雪花上。而你不可能在想我。</p><p>​第二层：是我在剥螃蟹的壳。是我在用笔记本。是枫叶上的雪花落在我的身上。是我在想你。</p><p>​第三层：除非世界颠倒你才会爱上我</p><p>吴千惠已经不是那个吴千惠了，消息也不回了，开始忙碌了，我把她拉黑又觉得最近她真的很累不想再让她心烦于是又取消拉黑，但是就算你拉黑了她也不会发现了。2020真是一个坏年，所有的告白都失败。异性不存在朋友。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>好电影合集</title>
+      <link href="posts/film.html"/>
+      <url>posts/film.html</url>
+      
+        <content type="html"><![CDATA[<h1>好电影推荐合集</h1><h3 id="爱情电影">爱情电影</h3><ol><li>遇见你之前</li><li>你好西蒙</li><li>壁画男孩</li><li>所有明亮的地方</li><li>再见钟情</li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电影 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 电影 </tag>
+            
+            <tag> 合集 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>9月23散记</title>
+      <link href="posts/9-23day.html"/>
+      <url>posts/9-23day.html</url>
+      
+        <content type="html"><![CDATA[<h3 id="9月23散记">9月23散记</h3><p>就像鹏博说的一样，今天是个暴雨天，就算是带了伞，穿了高底篮球鞋，最后到公司还是湿漉漉了</p><p>刚来北京的时候就想过如果遇到了雨天我上下班会不会很不方便，现实告诉了我： 是的 不仅不方便 还特别的难受，因为脚很黏<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span></p><p>but上班路上有看到令强迫症难受的井盖<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8">😀</span><br><img src="/image/abc.jpg" alt="强迫症井盖"></p><p>下班看到有猫耳朵的车子<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8">🐱</span><br><img src="/image/cat_Car.jpg" alt="cat_Car"></p><p>听着耳机的歌，缓慢的骑着车，每天下班的这个时候就是最舒服的时候吧，一个人的世界还真的挺好</p><p>谈什么恋爱 别人喜欢的是历史好的男生 你们不是一路人</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>9月25散记</title>
       <link href="posts/9-25day.html"/>
       <url>posts/9-25day.html</url>
@@ -212,31 +289,6 @@
       <url>posts/9-24day.html</url>
       
         <content type="html"><![CDATA[<h3 id="9-24散记">9.24散记</h3><p>早餐店有一个顾客抱怨没有位置坐了：想赚钱还不收拾桌子</p><p>这也许就是他发泄的方式  那阿龙怎么发泄呢</p><p><a href="https://music.163.com/#/song?id=518904648">Paris in the rain</a>  超好听！宝藏歌曲get  炒鸡浪漫~！</p><p><a href="https://music.163.com/#/song?id=1329228822">我和比奇堡的朋友们</a>   是个可可爱爱的沙雕歌曲 真是让人心情愉快~美好的一天就这么开始了！</p><p>en plus 网易云的评论区里也都是有趣的人！</p><p>害外卖延迟30分钟again  现在的外卖配送真是越来越欧式了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><p>wocwoc这周结束就没有前端leader了  现在的文件上传还没有搞清楚，可真是伤脑筋</p><p>！晚上跟公司的同事一起吃了饭 第一次团建get！</p><p>没想到互联网公司在饭桌上聊得会是 学历+游戏+学校生活 感觉同事都好厉害 都是985名校 留学也是全球IS前几 俺立马变土狗了<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f61e.png?v8">😞</span></p><p>会做错很多事情，但不会做错爱你<br>会后悔很多事情，但不会后悔喜欢你</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      <categories>
-          
-          <category> 散记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 散记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>9月23散记</title>
-      <link href="posts/9-23day.html"/>
-      <url>posts/9-23day.html</url>
-      
-        <content type="html"><![CDATA[<h3 id="9月23散记">9月23散记</h3><p>就像鹏博说的一样，今天是个暴雨天，就算是带了伞，穿了高底篮球鞋，最后到公司还是湿漉漉了</p><p>刚来北京的时候就想过如果遇到了雨天我上下班会不会很不方便，现实告诉了我： 是的 不仅不方便 还特别的难受，因为脚很黏<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span></p><p>but上班路上有看到令强迫症难受的井盖<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f600.png?v8">😀</span><br><img src="/image/abc.jpg" alt="强迫症井盖"></p><p>下班看到有猫耳朵的车子<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f431.png?v8">🐱</span><br><img src="/image/cat_Car.jpg" alt="cat_Car"></p><p>听着耳机的歌，缓慢的骑着车，每天下班的这个时候就是最舒服的时候吧，一个人的世界还真的挺好</p><p>谈什么恋爱 别人喜欢的是历史好的男生 你们不是一路人</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       <categories>
