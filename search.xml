@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>10月1散记</title>
+      <link href="posts/10-1day.html"/>
+      <url>posts/10-1day.html</url>
+      
+        <content type="html"><![CDATA[<h1>10月1散记</h1><p>也没有什么国庆节的特殊仪式感  和双休也没什么区别</p><p>嘿合着我不主动说节日祝福 LPQ 和WQH也就不说呗 怪让人伤心的</p><p>感情不是我爱你你爱我，需要两个人互相爱着才行的</p><p>得 过完中秋报名托业吧 好好复习考试吧我 重心从感情–&gt;学业</p><p>我的老母亲的想法还是有些许的旧时代，还是觉得老三样职业工作好，算了我也懒得说服我妈了，我反正自己过自己的日子就阔以了</p><p>感觉我妈也感觉到我跟ZYJ感情出问题了吧，害分手了就分手呗，我妈对ZYJ的评价真高，可能是印象太好了，先入为主当儿媳妇了</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>9月30散记</title>
       <link href="posts/9-30day.html"/>
       <url>posts/9-30day.html</url>
@@ -357,19 +382,6 @@
             <tag> git </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="posts/4a17b156.html"/>
-      <url>posts/4a17b156.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><pre class=" language-language-bash"><code class="language-language-bash">$ hexo new "My New Post"</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><pre class=" language-language-bash"><code class="language-language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><pre class=" language-language-bash"><code class="language-language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><pre class=" language-language-bash"><code class="language-language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
       
     </entry>
     
