@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>vue中封装svg-icon组件以及使用</title>
+      <link href="posts/vueSvgIcon.html"/>
+      <url>posts/vueSvgIcon.html</url>
+      
+        <content type="html"><![CDATA[<h1>vue中封装svg-icon组件以及使用方法</h1><h2 id="所需文件">所需文件</h2><p>在<strong>component(创建项目后本身就存在)文件夹</strong>下创建一个<strong>svg-icon文件夹</strong>，里面创建一个<strong>svg-icon.vue</strong> 的vue文件</p><p>svg-icon.vue文件代码：</p><pre><code>&lt;template&gt;  &lt;svg    class="svg-icon"    :class="iconColorTheme"    :style="{ height: iconUnit, width: iconUnit, fill: iconColor }"    aria-hidden="true"  &gt;    &lt;use :xlink:href="iconName"&gt;&lt;/use&gt;  &lt;/svg&gt;&lt;/template&gt;&lt;script&gt;export default {  name: 'SvgIcon',  props: {    icon: {      type: String    },    size: {      type: String,    },    color: {      type: String,    },  },  data() {    return {      colorThemes: [        'primary',      ],    };  },  computed: {    iconName () {      if (this.icon) {        return `#${this.icon}`      }       return '';    },    iconColor() {      if (this.color) {        if (!this.iconColorTheme) {          return this.color;        }      }       return '';    },    iconColorTheme() {      const matchTheme = this.colorThemes.indexOf(this.color) &gt; -1;      return matchTheme ? `svg-icon-${this.color}` : '';    },    iconUnit () {      let unit;      switch (this.size) {        case 'xlg':          unit = '24px';          break;        case 'lg':          unit = '20px';          break;        case 'md':          unit = '16px';          break;        case 'sm':          unit = '12px';          break;        default:          unit = this.size || '16px';      }      return unit;    }  }}&lt;/script&gt;&lt;style lang="scss"&gt;.svg-icon {  width: 16px;  height: 16px;  fill: $icon-default;  //一个变量而已  overflow: hidden;}&lt;/style&gt;</code></pre><p>新建一个模块名称为<strong>svgIcons(名字可以修改)的文件夹</strong>，里面有index.js文件 以及 <strong>一个存放 .svg类型文件的文件夹</strong></p><p>index.js文件代码：</p><pre class=" language-language-javascript"><code class="language-language-javascript">import Vue from 'vue'import SvgIcon from '@/components/SvgIcon' // svg组件 // register globallyVue.component('svg-icon', SvgIcon) const requireAll = requireContext => requireContext.keys().map(requireContext)const req = require.context('./svg', false, /\.svg$/)requireAll(req)</code></pre><h2 id="所需配置">所需配置</h2><h3 id="main-js需要添加配置">main.js需要添加配置</h3><p>main.js中导入svgIcons文件夹（整体。包含index.js以及存放.svg类型文件的文件夹）</p><h3 id="需要安装svg-sprite-loader">需要安装svg-sprite-loader</h3><p>命令：npm install svg-sprite-loader --save</p><h3 id="vue-config-js中需要添加配置">vue.config.js中需要添加配置</h3><p><img src="/image/svgSetting.png" alt="svg-icon"><br><img src="/image/html-style.png" alt="html-style"></p><p>第9，15行 的路径是存放.svg类型文件的文件夹的路径</p><p>第20行的symbolId可以更改，改为 <strong>symbolId: '[name]'</strong></p><h2 id="使用方法">使用方法</h2><pre><code>&lt;svg-icon class="title-icon" icon="import-manage" color="primary" size="xlg"&gt;&lt;/svg-icon&gt;//icon="文件名称" color="svg图片颜色" size="图片大小"//切记要把Eslint这傻逼玩意关掉：在vue.config.js中添加 lintOnSave: false,</code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> svg </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>10月6散记</title>
+      <link href="posts/10-6day.html"/>
+      <url>posts/10-6day.html</url>
+      
+        <content type="html"><![CDATA[<h1>10月6散记</h1><p>从武汉飞机回北京了！</p><p>跟ZYJ聊天还是跟以前一样呀，很自然。</p><p>找个时间去成都找她玩，也许会慢慢重拾吧</p><p>国庆节也快过完咯，差不多要重新开始工作了！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>阿龙男士护理</title>
       <link href="posts/manSkinCare.html"/>
       <url>posts/manSkinCare.html</url>
