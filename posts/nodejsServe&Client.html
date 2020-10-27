@@ -1,0 +1,1413 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Nodejs实现服务端功能并且和前端进行交互（vue）, LongSign">
+    <meta name="description" content="Blog site of SilongXu">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Nodejs实现服务端功能并且和前端进行交互（vue） | LongSign</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.2.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LongSign</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LongSign</div>
+        <div class="logo-desc">
+            
+            Blog site of SilongXu
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Nodejs实现服务端功能并且和前端进行交互（vue）</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                <span class="chip bg-color">后端</span>
+                            </a>
+                        
+                            <a href="/tags/nodejs/">
+                                <span class="chip bg-color">nodejs</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                后端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-10-27
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1>Nodejs实现服务端功能并且和前端进行交互（vue）</h1>
+<h2 id="开发环境-开发工具">开发环境/开发工具</h2>
+<p>IDE用vscode。</p>
+<p>下载安装nodejs</p>
+<p>前端：npm安装vue，vuex，vue-cli，vue-router</p>
+<p>后端：npm安装express，npm安装express-generator</p>
+<p>数据库：mysql，monggoDB 这两个选一个</p>
+<p>git工具</p>
+<h2 id="使用express框架创建后端项目目录">使用express框架创建后端项目目录</h2>
+<p>默认已经安装好了<code>nodejs</code>和<code>vscode</code> (nodejs自带npm)</p>
+<p>npm 下载express</p>
+<p>npm 下载express-generator</p>
+<p>然后在一个想存放项目的目录下新建一个文件夹，用vscode进入这个文件夹，打开terminal (确保是指向这个文件夹)</p>
+<p>express -e projectname</p>
+<p>-e 是选用一个模板   projectname就是自己给项目起的名字</p>
+<p>然后npm install 先将需要的依赖包下载下来。</p>
+<p>小功能：使用nodemon替换node进行服务端启动，这样每次保存后端代码的时候会自动更新。</p>
+<p>nodemon方法：先npm install nodemon --save    然后再package.json中，将第六行的node 改为nodemon ,保存即可</p>
+<p>接下来我们来看一下创建的文件的目录：</p>
+<p><img src="/image/20201027/express%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84.png" alt="express目录结构"></p>
+<p>别着急，我们一个一个进行解读</p>
+<h3 id="bin-www">bin/www</h3>
+<p>我们先来进行一个图的截： <img src="/image/20201027/binWWW.png" alt="binwww"></p>
+<table>
+<thead>
+<tr>
+<th>代码范围</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6-8</td>
+<td>引用express自带的模块（debug,http） 以及  入口文件 app.js</td>
+</tr>
+<tr>
+<td>14-15</td>
+<td>使用代码范围在35-49所编写的函数 normalizePort() 给定我们服务端的 端口</td>
+</tr>
+<tr>
+<td>21</td>
+<td>创建一个服务</td>
+</tr>
+<tr>
+<td>27</td>
+<td>监听端口（端口在代码范围14-15根据函数所给定）</td>
+</tr>
+<tr>
+<td>28-29</td>
+<td>绑定事件。分别绑定了 出错 以及 成功调用端口 这两种情况下所要进行的事件</td>
+</tr>
+<tr>
+<td>35-49</td>
+<td>函数normalizePort的逻辑编写。功能：以10为基数进行字符串转为int的解析</td>
+</tr>
+<tr>
+<td>55-77</td>
+<td>函数onError的逻辑编写。功能：给不同的错误情况 予 不同的处理方式。（不太重要）</td>
+</tr>
+<tr>
+<td>83-89</td>
+<td>函数 onListening的逻辑编写。功能:服务端成功调用http服务的情况下的逻辑。（不太重要，实现了就行，我管他原理呢哼）</td>
+</tr>
+</tbody>
+</table>
+<p>能看懂英文注释的最好不过了</p>
+<h3 id="node-modules">node_modules</h3>
+<p>这里面都是需要依赖的包。没什么好说的</p>
+<h3 id="public">public</h3>
+<p>这里面大多存储静态文件。前后端分离的项目（<code>nodejs+express</code>操作数据，前端操作页面视图）的话不用太过在意</p>
+<h3 id="routes">routes</h3>
+<p>在这个文件里面写 接口文件（js文件）。后端的路由是由<code>app.js</code>中的 <code>app.use(path, xxxRouter)</code>方法 和这个文件夹里面的文件进行配合实现的</p>
+<h3 id="views">views</h3>
+<p>模板文件。通过express创建的项目大多都会有模板文件，模板文件类型有很多种，jade，ejs等等。</p>
+<p>存在的目的：有些很小的项目，根本就不需要前后端分离，分离了反而开发起来更复杂了，所以提供给你模板，直接通过模板生成前端页面。</p>
+<p>如果是前后端分离的项目可以直接无视。</p>
+<h3 id="app-js">app.js</h3>
+<p>前端入口文件。最重要的文件。里面的东西最好不要删除。先来个图的截：</p>
+<p><img src="/image/20201027/expressAppJs.png" alt="expressAPPJS"></p>
+<table>
+<thead>
+<tr>
+<th>代码范围</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1-5</td>
+<td>express自带module的引用。（每个引用的功能不了解的自行查看文档哦）</td>
+</tr>
+<tr>
+<td>7-8</td>
+<td>引用 routes文件夹里面的文件。和routes文件夹里面的文件进行配合实现接口的暴露</td>
+</tr>
+<tr>
+<td>10</td>
+<td>创建express示例。功能都是基于express示例来实现的</td>
+</tr>
+<tr>
+<td>13-14</td>
+<td>13：指定模板目录  14 指定模板引擎   前后端分离的话可以把这两行注释掉</td>
+</tr>
+<tr>
+<td>16-18</td>
+<td>目的是支持req.body的传输。这样的话可以在接口里面使用req.body得到请求体的内容</td>
+</tr>
+<tr>
+<td>19-20</td>
+<td>目的：给了获取cookie的权限（相信你懂我的意思了）</td>
+</tr>
+<tr>
+<td>22-23</td>
+<td>很重要。 路由接口</td>
+</tr>
+<tr>
+<td>26-28</td>
+<td>处理404错误</td>
+</tr>
+<tr>
+<td>31-39</td>
+<td>处理错误 （好多好多错误）</td>
+</tr>
+<tr>
+<td>41</td>
+<td>接口向外暴露</td>
+</tr>
+</tbody>
+</table>
+<h2 id="任务梳理">任务梳理</h2>
+<p>前后端分离开发，使用<code>nodejs</code>实现服务端数据层面的处理，传输。使用vue实现客户端的页面交互，页面渲染。</p>
+<p>前后端跨域处理。</p>
+<p>后端的接口编写。</p>
+<p>后端的数据库连接</p>
+<p>后端的对象存储（和 java 里面的bean功能差不多）</p>
+<h2 id="跨域配置">跨域配置</h2>
+<p>跨域配置可以在前端通过代理转发，也可以通过后端</p>
+<h3 id="前端代理转发方法">前端代理转发方法</h3>
+<p>通过<code>vue-cli</code>创建了前端项目之后，在根目录创建<code>vue.config.js</code>配置文件，然后在里面进行代理配置：<code>devServer.proxy</code></p>
+<p>可以查看官方文档学习使用：<a target="_blank" rel="noopener" href="https://github.com/chimurai/http-proxy-middleware#options">戳这里</a></p>
+<p>配置只需要指定下面这几项：</p>
+<pre><code>  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://127.0.0.1:3000/",
+        secure: false,
+        changeOrigin: true,
+      },
+    }
+  }
+</code></pre>
+<p>详情了解可以查看这个图： <img src="/image/20201027/devServer.proxy%E8%AF%A6%E6%83%85.png" alt="proxy详情"></p>
+<p>host 和 port这两项 可以不需要。 <code>pathRewrite</code>如果没需要的话也不用写</p>
+<h3 id="后端添加请求头方法">后端添加请求头方法</h3>
+<p>在后端项目目录的<code>app.js</code>文件中，直接将下面的代码添加进去就行</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">
+app.all('*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS");
+  res.header("Content-Type", "application/json;charset=utf-8");
+  next();
+});
+</code></pre>
+<h2 id="前后端接口编写">前后端接口编写</h2>
+<p>这是个重头戏，阿龙在这个地方踩了坑</p>
+<p>首先我们先了解，代理其实是可以进行多个代理的，所以可以有 <strong>单代理多接口</strong>以及<strong>多代理多接口</strong> （你的接口总不能只有一个吧，不然那还开发个鬼）</p>
+<p>我们先来了解单代理多接口</p>
+<h3 id="单代理多接口">单代理多接口</h3>
+<p>首先我们要了解一个隐藏的知识点：<code>/api</code>是个特殊字段，所以无论是代理转发，还是后端的接口编写，还是<code>axios</code>中的<code>baseURL</code>的开头都最好是/api</p>
+<h4 id="后端的接口编写规则">后端的接口编写规则</h4>
+<p>其实也不是只有这一种方法，只是我用的是这种方法，如果有更好的可以推荐。</p>
+<p>在app.js文件中 有<code>app.use('/', indexRouter)</code>和<code>app.use('/users', usersRouter)</code>这两行代码</p>
+<p><img src="/image/20201027/appuse%E4%BE%8B%E5%AD%90.png" alt="appuse"></p>
+<p>这两行代码的意思是，给<code>indexRouter</code>和<code>usersRouter</code>这两个已经封装好的js文件一个接口调用的入口。启动服务后，可以通过<code>localhost:3000/</code> 和 <code>localhost:3000/users</code>访问到 routes文件夹下 <code>index.js</code> 和<code>users.js</code>所定义的接口返回内容。</p>
+<h5 id="多级路由编写">多级路由编写</h5>
+<p>现在知道怎么访问接口了，但是只能访问一级接口，那怎么样才能访问像localhost:3000/users/love/like这样的多级路由呢？</p>
+<p>以routes下的users.js为例，默认的内容是这样的： <img src="/image/20201027/routes.users.js.png" alt="routesUsersJS"></p>
+<p>我们想要实现多级路由，只需要在第一个路由的路径上进行添加，比如现在的users.js里面的get路径是 <code>/</code>，我们只需要新建一个router请求，然后修改第一个参数的路径，比如把 <code>/</code> 改成<code>/love</code>，就可以调用<code>localhost:3000/users/love</code>这个接口得到里面的返回内容了。举例： <img src="/image/20201027/routes.users.js2.png" alt="routesUsersJS2"></p>
+<p>注意：在<code>app.js</code>里面调用这个封装好的模块所使用的路径是基础路径，也就是说 <code>app.use('path1', usersRouter)</code> 里面的<code>path1</code>是<code>users.js</code>里面所有二级路由的基本，二级路由都是在<code>localhost:3000/users</code> 的基础上向后添加字段的。</p>
+<p>同理，我们在index.js里面也添加一些数据，实现两个多级路由接口（其实也就是多个多级路由了）</p>
+<p>在浏览器上（postman也可以）直接访问这些接口地址，只要得到了预期的数据那么说明后端的接口已经编写好了。</p>
+<h4 id="前端部分对后端接口的调用">前端部分对后端接口的调用</h4>
+<h5 id="对axios的封装和调用">对<code>axios</code>的封装和调用</h5>
+<p>我通常封装<code>axios</code>的方法是在一个js文件中封装好一个<code>axios</code>的示例对象，<code>baseURL</code>，<code>requestHeader</code>等请求头信息在这个<code>js</code>文件里面封装。这个文件里面的信息和后端的接口无关： <img src="/image/20201027/axios%E5%B0%81%E8%A3%85.png" alt="axios封装"></p>
+<p>然后，在每个功能模块下（因为vue是模块化开发嘛，每个功能肯定是有自己的模块的）新建一个<code>apiService.js</code>文件（<code>apiService</code>是文件名，随便你改），在里面引用封装好的<code>axios</code>实例，然后在<code>apiService.js</code>文件里面编写你这个模块里面需要的所有接口，以供将来的vue文件调用.这个文件里面的信息是和后端接口字段有关的，需要对照后端接口来编写：<img src="../image/20201027/http%E5%B0%81%E8%A3%85.png" alt="http封装"></p>
+<p>最后在需要接口的vue文件中引用这个<code>apiService</code>文件，然后调用接口拿到数据即可</p>
+<h5 id="在vue类型文件中调用接口">在<code>vue</code>类型文件中调用接口</h5>
+<p><img src="../image/20201027/vue%E8%B0%83%E7%94%A8http.png" alt="vue调用http"></p>
+<h4 id="TIPS-总结">TIPS+总结</h4>
+<p>前后端接口配合的时候，后端的app.js文件中的 <code>app.use('/', indexRouter)</code> 这样的代码的路径统一加上 <code>/api</code>，后面的字段根据实际情况来修改。</p>
+<p>同样的前端的vue.config.ja文件中代理的地方的标识，也要设为<code>/api</code>，，以达到检测到/api这个字段的时候可以进行跨域 的目的</p>
+<p>并且，在axios封装文件中的baseURL最好也要设置为/api，这样就不需要在引用axois实例的封装文件(http封装文件)中手动添加  /api 字段了,只需要根据后端给的接口文档进行接口的调用即可。</p>
+<h3 id="多代理多接口">多代理多接口</h3>
+<p>在这里先给大家提个醒，多代理经常会报404错误，自己也找不到是什么原因<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f614.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f614.png?v8">😔</span> ，我按照我自己的实际经历和踩坑写的多代理处理，也许不同的人有不一样的bug，如果我的方法对你有帮助那就再好不过了。</p>
+<p>首先先看一篇文章，这里面涉及到多代理以及pathRewrite的一些冷知识：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43216105/article/details/105844391">戳这里</a>   挺重要的，希望可以看完它~</p>
+<h4 id="后端的接口编写规则-2">后端的接口编写规则</h4>
+<p>接口的编写其实都没有什么太大的区别，但是为了跟单代理做个区分，在这里特意将接口前面的两个字段写成一样的：<img src="/image/20201027/%E5%90%8E%E7%AB%AF%E5%A4%9A%E4%BB%A3%E7%90%86%E6%8E%A5%E5%8F%A3%E8%A7%84%E5%88%99.png" alt="后端多代理接口规则"></p>
+<p>相同字段：  /api/product</p>
+<p>不同字段： version1  和  version2</p>
+<p><strong>多级路由和单代理一样</strong></p>
+<h4 id="前端部分对后端接口的调用-2">前端部分对后端接口的调用</h4>
+<p>首先需要修改代理：<img src="/image/20201027/%E5%A4%9A%E4%BB%A3%E7%90%86vue%E6%96%87%E4%BB%B6.png" alt="多代理vue文件"></p>
+<p>你可以把target改成不同的地址，比如聪http://127.0.0.1:3000 改成 <a target="_blank" rel="noopener" href="http://198.124.6.1:8080">http://198.124.6.1:8080</a></p>
+<p>然后需要修改axios的封装文件中的baseURL，将多代理里面相同的字段统一给baseURL： <img src="/image/20201027/%E5%A4%9A%E4%BB%A3%E7%90%86axios%E4%B8%AD%E7%9A%84baseURL.png" alt="多代理axios中的baseURL"></p>
+<p>最后对不同模块的接口，只需要在requestURL中将不同的字段（version1 和 version2） 拼接上去就可以了。</p>
+<h4 id="TIPS-总结-2">TIPS+总结</h4>
+<p>在修改了接口字段的时候，最好将后端的服务以及前端的服务都重启一遍，（ ctrl + c 然后再npm start）</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Silong Xu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://silongxu.github.io/posts/nodejsServe&Client.html">https://silongxu.github.io/posts/nodejsServe&Client.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Silong Xu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                                    <span class="chip bg-color">后端</span>
+                                </a>
+                            
+                                <a href="/tags/nodejs/">
+                                    <span class="chip bg-color">nodejs</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/nodejsServe&Client.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Nodejs实现服务端功能并且和前端进行交互（vue）">
+                        
+                        <span class="card-title">Nodejs实现服务端功能并且和前端进行交互（vue）</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Nodejs实现服务端功能并且和前端进行交互（vue）
+开发环境/开发工具
+IDE用vscode。
+下载安装nodejs
+前端：npm安装vue，vuex，vue-cli，vue-router
+后端：npm安装express，npm安装ex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
+                    </a>
+                    
+                    <a href="/tags/nodejs/">
+                        <span class="chip bg-color">nodejs</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/mysql&workbench.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Mysql+Workbench使用方法">
+                        
+                        <span class="card-title">Mysql+Workbench使用方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Mysql+Workbench使用方法
+Mysql通识
+既然要用nodejs实现服务端，那数据库以及sql语句肯定是必须要会的（其实阿龙本身就是后端出身，但是阴差阳错做了前端）。
+在电脑上下载Mysql的时候，选择那个最全的！
+下载路径：进
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%90%8E%E7%AB%AF/" class="post-category">
+                                    后端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%90%8E%E7%AB%AF/">
+                        <span class="chip bg-color">后端</span>
+                    </a>
+                    
+                    <a href="/tags/nodejs/">
+                        <span class="chip bg-color">nodejs</span>
+                    </a>
+                    
+                    <a href="/tags/mysql/">
+                        <span class="chip bg-color">mysql</span>
+                    </a>
+                    
+                    <a href="/tags/workbench/">
+                        <span class="chip bg-color">workbench</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2020</span>
+            <a href="/about" target="_blank">Silong Xu</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/SilongXu" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:945139498@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=945139498" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 945139498" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
