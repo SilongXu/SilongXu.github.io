@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>11月29散记</title>
+      <link href="posts/11-29day.html"/>
+      <url>posts/11-29day.html</url>
+      
+        <content type="html"><![CDATA[<h1>11月29散记</h1><p>PQ第一次用亿通行</p><p>PQ上一次坐地铁是在大一</p><p>PQ呆呆的好可爱</p><p>小本本记下来：以后不能让PQ吃苦</p><p>北语不是211 是个特殊的学校</p><p>PQ朋友去雍和宫求了个考试的签 下周末我也去帮她求一个</p><p>路上看到有花</p><p>PQ是喜欢花的</p><p>但是这样子第一次送花太差劲了 下一次吧</p><p>PQ复习遇到瓶颈了 最后一个月加油！！！</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 散记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 散记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue中一级路由跳转另一一级路由</title>
       <link href="posts/vueFirstRouterToAnother.html"/>
       <url>posts/vueFirstRouterToAnother.html</url>
