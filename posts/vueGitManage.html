@@ -537,6 +537,23 @@
 <p>然后在这个文件目录  进行命令</p>
 <p><strong>vue create filename</strong></p>
 <p>创建自己的项目</p>
+<h1>2020年12月更新</h1>
+<h2 id="git更新代码操作">git更新代码操作</h2>
+<p>自己的master版本是1.0，且自己在1.0的版本下新建了一个名为dev的分支且在这个分支上改动较大。但是同事更新了master版本 现在远端的master版本是1.1，自己要怎么操作才能既保留同事的最新的master又将dev的改动合并到最新的master中（也就是dev分支push到github上的时候处于 0|n的地步）</p>
+<p>首先要将自己本地的master同步远端仓库的master：</p>
+<p>git checkout master</p>
+<p>git pull</p>
+<p>git checkout dev</p>
+<p>git merge master</p>
+<p>解决冲突</p>
+<p>git add -A</p>
+<p>git commit -m “备注”</p>
+<p>git push origin dev --force</p>
+<p>出现0|n的情况且n ≠1怎么处理呢？如下：</p>
+<p>git rebase -i HEAD~n  保留一个pick 其余的pick都用squash替换</p>
+<p>将最新的注释保留 删除其余的注释</p>
+<p>然后:wq保存</p>
+<p>重新push一次即可</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
