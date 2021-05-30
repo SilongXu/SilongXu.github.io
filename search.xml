@@ -4,6 +4,62 @@
   
     
     <entry>
+      <title>前端图片转base64然后传递给后端</title>
+      <link href="posts/turnImgTobase64.html"/>
+      <url>posts/turnImgTobase64.html</url>
+      
+        <content type="html"><![CDATA[<h1>前端转base64 传递给后端存储进入数据库</h1><p>大家应该都知道前端可以通过接收后端图片的url，然后从云端拿到图片。</p><p>但是如果只是一个本地开发的产品，没有云端的情况该怎么办呢。</p><p>对于小一些的图片（1M左右），我们可以将它转为base64格式，这样的话传递给后端就是一个字符串，方便后端存储进本地的数据库。</p><p>那么接下来就来看看如何做吧。</p><p>启蒙网站！： <a href="https://www.cnblogs.com/maggieq8324/p/11577697.html">base64</a></p><pre class=" language-language-javascript"><code class="language-language-javascript"><el-upload class="avatar-uploader" action="" ref="uploadAvatar" :show-file-list="false" :auto-upload="false" :on-change="changeFile">     <img v-if="imageUrl" :src="imageUrl" class="uploadAvatar">     <i v-else="" class="el-icon-plus avatar-uploader-icon"></i> </el-upload>data() {  return {imageUrl: '',imageBaseUrl: '',  }} /** * 文件框改变事件 * @param file * @param fileList */changeFile(file, fileList) {    const isJPGORPNG = (file.raw.type === 'image/jpeg' || file.raw.type === 'image/png');    const isLt1M = file.size / 1024 / 1024 &lt; 1;    if (!isJPGORPNG) {        this.$message.info('上传头像图片只能是 JPG 或 PNG 格式!');        return;    }    if (!isLt1M) {        this.$message.info('上传头像图片大小不能超过 1MB!');        return;    }    var This = this;    var reader = new FileReader();    reader.readAsDataURL(file.raw);    reader.onload = function(e){        this.result; //base64编码        This.imageBaseUrl = this.result;        This.imageUrl = this.result;    }},</code></pre><p>this.result的结果就是base64 编码过后的字符串了！</p><p>既然图片转为了base64编码 那么我们该如何base64这个字符串显示出来呢。</p><p>其实直接将base64字符串赋值给 :src 就可以了</p><p>附上一个分离base64编码的方法：</p><pre class=" language-language-javascript"><code class="language-language-javascript">base64ImgtoFile(dataurl, filename = 'file') {  let arr = dataurl.split(',')  let mime = arr[0].match(/:(.*?);/)[1]  let suffix = mime.split('/')[1]  let bstr = atob(arr[1])  let n = bstr.length  let u8arr = new Uint8Array(n)  while (n--) {    u8arr[n] = bstr.charCodeAt(n)  }  return new File([u8arr], `${filename}.${suffix}`, {    type: mime  })}，// base64编码的图片var base64Img = 'data:image/png;base64,XXXXX...';//转换图片文件var imgFile = this.base64ImgtoFile(base64Img); </code></pre><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+            <tag> 前端 </tag>
+            
+            <tag> base64 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows下使用docker运行mongoDB</title>
+      <link href="posts/mongoDBInWindows.html"/>
+      <url>posts/mongoDBInWindows.html</url>
+      
+        <content type="html"><![CDATA[<h1>在windows中使用Docker运行mongoDB</h1><p>确保自己的windows系统中安装了docker</p><p>首先使用docker下载mongoDB数据库：</p><p>进入docker官网的mongo下载地址https://hub.docker.com/_/mongo</p><p>复制docker命令：<em>docker pull mongo</em></p><p>他会默认下载最新的版本</p><p>完成下载后 打开powershell 或者cmd</p><p>输入docker images 查看mongo是否存在于docker中了</p><p>确认存在后 运行容器，命令：<code>docker run -itd --name mongo -p 27017:27017 mongo --auth</code> (这个命令是让将mongo分配给一个docker容器，如果报 这个名字已经分配给了容器xxxx那么要么换个名字，要么讲这个容器移除后再运行此命令)</p><blockquote><p>参数说明：</p><ul><li>-p 27017:27017: 映射容器服务的27017端口到宿主机的27017端口。外部可以直接通过 宿主机ip:27017访问到mongo的服务</li><li>–auth: 需要密码才能访问容器服务</li></ul></blockquote><p>接着通过<code>*docker ps*</code>命令查看容器的运行信息</p><p>然后使用以下命令添加用户和设置密码，并且尝试连接：</p><p>docker exec -it mongo mongo admin （这个命令需要先运行容器再使用）</p><p>#创建一个名为admin，密码为111111的用户</p><p>db.createUser({ user:‘admin’,pwd:‘111111’,roles:[ { role:‘userAdminAnyDatabase’, db: ‘admin’}]});</p><p>#尝试使用上面创建的用户信息进行连接</p><p>db.auth(‘admin’,‘111111’)</p><p>然后我们给用户添加读写命令：</p><p>db.grantRolesToUser(“admin”,[{role: “readWrite”, db:“admin”}])</p><p>然后运行db.stats() 或者show users 进行查看users的信息</p><blockquote><p>附：添加用户时各个角色的对应权限</p><p>1.数据库用户角色：read、readWrite;</p><p>2.数据库管理角色：dbAdmin、dbOwner、userAdmin；</p><p>3.集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</p><p>4.备份恢复角色：backup、restore</p><p>5.所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</p><p>6.超级用户角色：root</p></blockquote><h3 id="使用compass-GUI客户端进行mongo可视化管理：">使用compass GUI客户端进行mongo可视化管理：</h3><p>下载地址：<a href="https://www.mongodb.com/products/compass">https://www.mongodb.com/products/compass</a></p><p>安装成功后， 解压文件，打开MongoDBCompass.exe文件</p><p>选择 new Connection 然后选择 右侧的 fill in connection fields individually</p><p>输入自己的配置，如果客户端设置了密码登录，Authentication选择 Username/Password并输入用户名密码，然后点击connect</p><p>进入数据库后选择admin的database(因为我们之前设置用户admin只在admin的databse下给了权限)</p><p>然后新建collections</p><p>剩下的操作去官网学习即可</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 配置 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 配置 </tag>
+            
+            <tag> mongoDB </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Photoshop扣人像方法</title>
       <link href="posts/photoshop.html"/>
       <url>posts/photoshop.html</url>

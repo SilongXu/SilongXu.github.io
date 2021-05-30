@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Photoshop扣人像方法, LongSign">
+    <meta name="keywords" content="前端图片转base64然后传递给后端, LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Photoshop扣人像方法 | LongSign</title>
+    <title>前端图片转base64然后传递给后端 | LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Photoshop扣人像方法</h1>
+                    <h1 class="description center-align post-title">前端图片转base64然后传递给后端</h1>
                 </div>
             </div>
         </div>
@@ -430,12 +430,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/photoshop/">
-                                <span class="chip bg-color">photoshop</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
-                            <a href="/tags/%E6%8A%A0%E5%9B%BE/">
-                                <span class="chip bg-color">抠图</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/base64/">
+                                <span class="chip bg-color">base64</span>
                             </a>
                         
                     </div>
@@ -446,8 +450,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/photoshop/" class="post-category">
-                                photoshop
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                前端
                             </a>
                         
                     </div>
@@ -459,7 +463,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-01
+                    2021-05-30
                 </div>
                 
 
@@ -475,21 +479,76 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Photoshop扣人像方法</h1>
-<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/84b4f565b6315560f6da3219.html">https://jingyan.baidu.com/article/84b4f565b6315560f6da3219.html</a></p>
-<p>1.将图片用PS打开</p>
-<p>2.选择右边的通道并且选择蓝通道，右键选择复制通道（随意设置）</p>
-<p>3.然后在 蓝 副本 通道打开色阶（快捷方法：ctrl+L, 正常方法：图像-调整-色阶）。如果无法打开的话请尝试以下方法：将图层解锁</p>
-<p>4.将色阶中的参数设置为 50   1.00   167（方便上色）</p>
-<p>5.选择工具栏的画笔工具，将前景色设置为黑色（rgb(0,0,0)）,后景色为白。</p>
-<p>6.用画笔将想要抠出来的图像填满（全部弄为黑色）。</p>
-<p>7.人像全部上色黑色后，选择工具栏的魔棒工具，点击一下黑色人像</p>
-<p>8.选中人像后，进行反选（快捷键：ctrl+shift+i, 正常方法：选择-反向）</p>
-<p>9.将反选的图像的颜色填充为白色：选择套索工具，然后右键单击反选区域，选择 填充 ，然后选择 白色（或者自己选择一个颜色），不透明度100%</p>
-<p>10回到魔棒工具，取消选择。然后切换为相反颜色（快捷键ctrl+I,正常方法：图像-调整-反向）</p>
-<p>11 按住ctrl 键然后单击缩略图，载入人像选取。（点通道的 蓝 副本）。然后回到图层</p>
-<p>12 拷贝图层（ctrl+J）,人像就被扣到新图层了！</p>
-<p>13 要是想加背景色的话，魔棒选取背景，然后填充就可以了！</p>
+                <h1>前端转base64 传递给后端存储进入数据库</h1>
+<p>大家应该都知道前端可以通过接收后端图片的url，然后从云端拿到图片。</p>
+<p>但是如果只是一个本地开发的产品，没有云端的情况该怎么办呢。</p>
+<p>对于小一些的图片（1M左右），我们可以将它转为base64格式，这样的话传递给后端就是一个字符串，方便后端存储进本地的数据库。</p>
+<p>那么接下来就来看看如何做吧。</p>
+<p>启蒙网站！： <a target="_blank" rel="noopener" href="https://www.cnblogs.com/maggieq8324/p/11577697.html">base64</a></p>
+<pre class=" language-language-javascript"><code class="language-language-javascript"><el-upload class="avatar-uploader" action="" ref="uploadAvatar" :show-file-list="false" :auto-upload="false" :on-change="changeFile">
+     <img v-if="imageUrl" :src="imageUrl" class="uploadAvatar">
+     <i v-else="" class="el-icon-plus avatar-uploader-icon"></i>
+ </el-upload>
+
+data() {
+  return {
+	imageUrl: '',
+	imageBaseUrl: '',
+  }
+}
+
+ /**
+ * 文件框改变事件
+ * @param file
+ * @param fileList
+ */
+changeFile(file, fileList) {
+    const isJPGORPNG = (file.raw.type === 'image/jpeg' || file.raw.type === 'image/png');
+    const isLt1M = file.size / 1024 / 1024 &lt; 1;
+
+    if (!isJPGORPNG) {
+        this.$message.info('上传头像图片只能是 JPG 或 PNG 格式!');
+        return;
+    }
+    if (!isLt1M) {
+        this.$message.info('上传头像图片大小不能超过 1MB!');
+        return;
+    }
+
+    var This = this;
+    var reader = new FileReader();
+    reader.readAsDataURL(file.raw);
+    reader.onload = function(e){
+        this.result; //base64编码
+        This.imageBaseUrl = this.result;
+        This.imageUrl = this.result;
+    }
+},
+</code></pre>
+<p>this.result的结果就是base64 编码过后的字符串了！</p>
+<p>既然图片转为了base64编码 那么我们该如何base64这个字符串显示出来呢。</p>
+<p>其实直接将base64字符串赋值给 :src 就可以了</p>
+<p>附上一个分离base64编码的方法：</p>
+<pre class=" language-language-javascript"><code class="language-language-javascript">base64ImgtoFile(dataurl, filename = 'file') {
+  let arr = dataurl.split(',')
+  let mime = arr[0].match(/:(.*?);/)[1]
+  let suffix = mime.split('/')[1]
+  let bstr = atob(arr[1])
+  let n = bstr.length
+  let u8arr = new Uint8Array(n)
+  while (n--) {
+    u8arr[n] = bstr.charCodeAt(n)
+  }
+  return new File([u8arr], `${filename}.${suffix}`, {
+    type: mime
+  })
+}，
+
+// base64编码的图片
+var base64Img = 'data:image/png;base64,XXXXX...';
+//转换图片文件
+var imgFile = this.base64ImgtoFile(base64Img); 
+</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -533,7 +592,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://silongxu.github.io/posts/photoshop.html">https://silongxu.github.io/posts/photoshop.html</a>
+                    <a href="https://silongxu.github.io/posts/turnImgTobase64.html">https://silongxu.github.io/posts/turnImgTobase64.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,12 +630,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/photoshop/">
-                                    <span class="chip bg-color">photoshop</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8A%A0%E5%9B%BE/">
-                                    <span class="chip bg-color">抠图</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/base64/">
+                                    <span class="chip bg-color">base64</span>
                                 </a>
                             
                         </div>
@@ -744,9 +807,71 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/posts/turnImgTobase64.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端图片转base64然后传递给后端">
+                        
+                        <span class="card-title">前端图片转base64然后传递给后端</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            前端转base64 传递给后端存储进入数据库
+大家应该都知道前端可以通过接收后端图片的url，然后从云端拿到图片。
+但是如果只是一个本地开发的产品，没有云端的情况该怎么办呢。
+对于小一些的图片（1M左右），我们可以将它转为base64格式，
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-30
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/base64/">
+                        <span class="chip bg-color">base64</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/posts/mongoDBInWindows.html">
                     <div class="card-image">
@@ -767,9 +892,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-04
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-04
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -791,65 +916,6 @@
                     
                     <a href="/tags/mongoDB/">
                         <span class="chip bg-color">mongoDB</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/2020.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="2020年结年文案">
-                        
-                        <span class="card-title">2020年结年文案</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            2020年结年
-2020年逝去的人尤其多
-身边倒是没什么影响 但是看着新闻的报道也会感触颇多
-长辈因为疫情离去 留下年幼的孩子
-为爱情脱下防护服 不留遗憾只活那一段幸福时间
-选择了当然就不会后悔 享受当下 回忆过去
-2020的确是个不平凡的
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/2020/" class="post-category">
-                                    2020
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%96%87%E6%A1%88/">
-                        <span class="chip bg-color">文案</span>
-                    </a>
-                    
-                    <a href="/tags/2020/">
-                        <span class="chip bg-color">2020</span>
                     </a>
                     
                 </div>

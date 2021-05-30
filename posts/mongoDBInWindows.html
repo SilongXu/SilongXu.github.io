@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Photoshop扣人像方法, LongSign">
+    <meta name="keywords" content="windows下使用docker运行mongoDB, LongSign">
     <meta name="description" content="Blog site of SilongXu">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Photoshop扣人像方法 | LongSign</title>
+    <title>windows下使用docker运行mongoDB | LongSign</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Photoshop扣人像方法</h1>
+                    <h1 class="description center-align post-title">windows下使用docker运行mongoDB</h1>
                 </div>
             </div>
         </div>
@@ -430,12 +430,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/photoshop/">
-                                <span class="chip bg-color">photoshop</span>
+                            <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                                <span class="chip bg-color">配置</span>
                             </a>
                         
-                            <a href="/tags/%E6%8A%A0%E5%9B%BE/">
-                                <span class="chip bg-color">抠图</span>
+                            <a href="/tags/mongoDB/">
+                                <span class="chip bg-color">mongoDB</span>
                             </a>
                         
                     </div>
@@ -446,8 +446,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/photoshop/" class="post-category">
-                                photoshop
+                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
+                                配置
                             </a>
                         
                     </div>
@@ -459,7 +459,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-01
+                    2021-05-04
                 </div>
                 
 
@@ -475,21 +475,49 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1>Photoshop扣人像方法</h1>
-<p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/84b4f565b6315560f6da3219.html">https://jingyan.baidu.com/article/84b4f565b6315560f6da3219.html</a></p>
-<p>1.将图片用PS打开</p>
-<p>2.选择右边的通道并且选择蓝通道，右键选择复制通道（随意设置）</p>
-<p>3.然后在 蓝 副本 通道打开色阶（快捷方法：ctrl+L, 正常方法：图像-调整-色阶）。如果无法打开的话请尝试以下方法：将图层解锁</p>
-<p>4.将色阶中的参数设置为 50   1.00   167（方便上色）</p>
-<p>5.选择工具栏的画笔工具，将前景色设置为黑色（rgb(0,0,0)）,后景色为白。</p>
-<p>6.用画笔将想要抠出来的图像填满（全部弄为黑色）。</p>
-<p>7.人像全部上色黑色后，选择工具栏的魔棒工具，点击一下黑色人像</p>
-<p>8.选中人像后，进行反选（快捷键：ctrl+shift+i, 正常方法：选择-反向）</p>
-<p>9.将反选的图像的颜色填充为白色：选择套索工具，然后右键单击反选区域，选择 填充 ，然后选择 白色（或者自己选择一个颜色），不透明度100%</p>
-<p>10回到魔棒工具，取消选择。然后切换为相反颜色（快捷键ctrl+I,正常方法：图像-调整-反向）</p>
-<p>11 按住ctrl 键然后单击缩略图，载入人像选取。（点通道的 蓝 副本）。然后回到图层</p>
-<p>12 拷贝图层（ctrl+J）,人像就被扣到新图层了！</p>
-<p>13 要是想加背景色的话，魔棒选取背景，然后填充就可以了！</p>
+                <h1>在windows中使用Docker运行mongoDB</h1>
+<p>确保自己的windows系统中安装了docker</p>
+<p>首先使用docker下载mongoDB数据库：</p>
+<p>进入docker官网的mongo下载地址https://hub.docker.com/_/mongo</p>
+<p>复制docker命令：<em>docker pull mongo</em></p>
+<p>他会默认下载最新的版本</p>
+<p>完成下载后 打开powershell 或者cmd</p>
+<p>输入docker images 查看mongo是否存在于docker中了</p>
+<p>确认存在后 运行容器，命令：<code>docker run -itd --name mongo -p 27017:27017 mongo --auth</code> (这个命令是让将mongo分配给一个docker容器，如果报 这个名字已经分配给了容器xxxx那么要么换个名字，要么讲这个容器移除后再运行此命令)</p>
+<blockquote>
+<p>参数说明：</p>
+<ul>
+<li>-p 27017:27017: 映射容器服务的27017端口到宿主机的27017端口。外部可以直接通过 宿主机ip:27017访问到mongo的服务</li>
+<li>–auth: 需要密码才能访问容器服务</li>
+</ul>
+</blockquote>
+<p>接着通过<code>*docker ps*</code>命令查看容器的运行信息</p>
+<p>然后使用以下命令添加用户和设置密码，并且尝试连接：</p>
+<p>docker exec -it mongo mongo admin （这个命令需要先运行容器再使用）</p>
+<p>#创建一个名为admin，密码为111111的用户</p>
+<p>db.createUser({ user:‘admin’,pwd:‘111111’,roles:[ { role:‘userAdminAnyDatabase’, db: ‘admin’}]});</p>
+<p>#尝试使用上面创建的用户信息进行连接</p>
+<p>db.auth(‘admin’,‘111111’)</p>
+<p>然后我们给用户添加读写命令：</p>
+<p>db.grantRolesToUser(“admin”,[{role: “readWrite”, db:“admin”}])</p>
+<p>然后运行db.stats() 或者show users 进行查看users的信息</p>
+<blockquote>
+<p>附：添加用户时各个角色的对应权限</p>
+<p>1.数据库用户角色：read、readWrite;</p>
+<p>2.数据库管理角色：dbAdmin、dbOwner、userAdmin；</p>
+<p>3.集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；</p>
+<p>4.备份恢复角色：backup、restore</p>
+<p>5.所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase</p>
+<p>6.超级用户角色：root</p>
+</blockquote>
+<h3 id="使用compass-GUI客户端进行mongo可视化管理：">使用compass GUI客户端进行mongo可视化管理：</h3>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.mongodb.com/products/compass">https://www.mongodb.com/products/compass</a></p>
+<p>安装成功后， 解压文件，打开MongoDBCompass.exe文件</p>
+<p>选择 new Connection 然后选择 右侧的 fill in connection fields individually</p>
+<p>输入自己的配置，如果客户端设置了密码登录，Authentication选择 Username/Password并输入用户名密码，然后点击connect</p>
+<p>进入数据库后选择admin的database(因为我们之前设置用户admin只在admin的databse下给了权限)</p>
+<p>然后新建collections</p>
+<p>剩下的操作去官网学习即可</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -533,7 +561,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://silongxu.github.io/posts/photoshop.html">https://silongxu.github.io/posts/photoshop.html</a>
+                    <a href="https://silongxu.github.io/posts/mongoDBInWindows.html">https://silongxu.github.io/posts/mongoDBInWindows.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -571,12 +599,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/photoshop/">
-                                    <span class="chip bg-color">photoshop</span>
+                                <a href="/tags/%E9%85%8D%E7%BD%AE/">
+                                    <span class="chip bg-color">配置</span>
                                 </a>
                             
-                                <a href="/tags/%E6%8A%A0%E5%9B%BE/">
-                                    <span class="chip bg-color">抠图</span>
+                                <a href="/tags/mongoDB/">
+                                    <span class="chip bg-color">mongoDB</span>
                                 </a>
                             
                         </div>
@@ -748,34 +776,34 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/mongoDBInWindows.html">
+                <a href="/posts/turnImgTobase64.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="windows下使用docker运行mongoDB">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="前端图片转base64然后传递给后端">
                         
-                        <span class="card-title">windows下使用docker运行mongoDB</span>
+                        <span class="card-title">前端图片转base64然后传递给后端</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            在windows中使用Docker运行mongoDB
-确保自己的windows系统中安装了docker
-首先使用docker下载mongoDB数据库：
-进入docker官网的mongo下载地址https://hub.docker.com/_
+                            前端转base64 传递给后端存储进入数据库
+大家应该都知道前端可以通过接收后端图片的url，然后从云端拿到图片。
+但是如果只是一个本地开发的产品，没有云端的情况该怎么办呢。
+对于小一些的图片（1M左右），我们可以将它转为base64格式，
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-04
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-30
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%85%8D%E7%BD%AE/" class="post-category">
-                                    配置
+                            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    前端
                                 </a>
                             
                             
@@ -785,12 +813,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">配置</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
-                    <a href="/tags/mongoDB/">
-                        <span class="chip bg-color">mongoDB</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/base64/">
+                        <span class="chip bg-color">base64</span>
                     </a>
                     
                 </div>
@@ -804,37 +836,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/2020.html">
+                <a href="/posts/photoshop.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="2020年结年文案">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Photoshop扣人像方法">
                         
-                        <span class="card-title">2020年结年文案</span>
+                        <span class="card-title">Photoshop扣人像方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2020年结年
-2020年逝去的人尤其多
-身边倒是没什么影响 但是看着新闻的报道也会感触颇多
-长辈因为疫情离去 留下年幼的孩子
-为爱情脱下防护服 不留遗憾只活那一段幸福时间
-选择了当然就不会后悔 享受当下 回忆过去
-2020的确是个不平凡的
+                            Photoshop扣人像方法
+https://jingyan.baidu.com/article/84b4f565b6315560f6da3219.html
+1.将图片用PS打开
+2.选择右边的通道并且选择蓝通道，右键选择复制通道（随意设置
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-12-31
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/2020/" class="post-category">
-                                    2020
+                            <a href="/categories/photoshop/" class="post-category">
+                                    photoshop
                                 </a>
                             
                             
@@ -844,12 +873,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E6%A1%88/">
-                        <span class="chip bg-color">文案</span>
+                    <a href="/tags/photoshop/">
+                        <span class="chip bg-color">photoshop</span>
                     </a>
                     
-                    <a href="/tags/2020/">
-                        <span class="chip bg-color">2020</span>
+                    <a href="/tags/%E6%8A%A0%E5%9B%BE/">
+                        <span class="chip bg-color">抠图</span>
                     </a>
                     
                 </div>
