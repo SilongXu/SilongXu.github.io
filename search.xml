@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>创建react项目以及遇到的问题</title>
+      <link href="posts/creat-react-app.html"/>
+      <url>posts/creat-react-app.html</url>
+      
+        <content type="html"><![CDATA[<h1>创建react项目以及遇到的问题</h1><p>创建react项目的方法常见的有三种，详细内容请看这个网址：<a href="https://www.html.cn/qa/css3/14955.html">戳戳</a></p><p>在这里我们只讲使用 create-react-app 管理工具创建react项目</p><p>和vue项目相似，react也使用nodejs作为服务器，所以也是使用npm进行项目管理</p><p>在控制台中运行命令<em>npm install -g create-react-app</em>  下载create-react-app</p><p>尝试运行npm run start 如果可以运行并且在3000端口下可以访问页面说明没有问题， 但是我遇到了webpack版本超前的问题</p><p><img src="/image/react/webpack-version-problem.png" alt="webpack-version-problem"></p><p>一个亲测有效的解决办法：在根目录下创建一个.env文件</p><p>并且在里面输入内容： SKIP_PREFLIGHT_CHECK=true</p><p><img src="/image/react/file-env.png" alt="file-env"></p><p>然后再运行一次npm run start 项目就可以正常启动了</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+            <tag> create-react-app </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端图片转base64然后传递给后端</title>
       <link href="posts/turnImgTobase64.html"/>
       <url>posts/turnImgTobase64.html</url>
